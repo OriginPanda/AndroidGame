@@ -1,6 +1,5 @@
 package com.example.projectwjp;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -23,28 +22,29 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GameView extends View {
-    Bitmap background, ground, hero;
-    Rect rectBackground, rectGround;
-    Context context;
-    Handler handler;
-    Enemy enemy;
-    final long UPDATE_MILLIS = 30;
-    Runnable runnable;
-    Paint textPaint = new Paint();
-    Paint healthPaint = new Paint();
-    float TEXT_SIZE = 120;
-    int points = 0;//Enemy Hp TODO zmiana klasy
-    int life = 3;
-    static int dWidth, dHeight;
-    Random random;
-    float heroX, heroY;
-    float oldX;
-    float oldheroX;
-    ArrayList<Obstacle> obstacles;
-    ArrayList<Impact> impacts;
+    private Bitmap background, ground, hero;
+    private Rect rectBackground, rectGround;
+    private Context context;
+    private Handler handler;
+    private Enemy enemy;
+    private final long REFRESH_RATE = 60;
+    private Runnable runnable;
+    private Paint textPaint = new Paint();
+    private Paint healthPaint = new Paint();
+    private float TEXT_SIZE = 120;
+    private int points = 0;//Enemy Hp TODO zmiana klasy
+    private int life = 3;
+    protected static int dWidth, dHeight;
+    private Random random;
+    private float heroX, heroY;
+    private float oldX;
+    private float oldheroX;
+    private ArrayList<Obstacle> obstacles;
+    private ArrayList<Impact> impacts;
 
     public GameView(Context context) {
         super(context);
+
         //enemy = new Enemy(typ);
         this.context = context;
         background = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame);
@@ -91,7 +91,7 @@ public class GameView extends View {
 //            if(obstacles.get(i).obsFrame>3){
 //                obstacles.get(i).obsFrame = 0;
 //            }
-            obstacles.get(i).obsY += 60 ;//obstacles.get(i).obsVelocity; TODO w zaleznosci od trudnosci
+            obstacles.get(i).obsY += 20 ;//obstacles.get(i).obsVelocity; TODO w zaleznosci od trudnosci
             // TODO Animacja impactu
             if(obstacles.get(i).obsY+obstacles.get(i).getObstacleHight()>=dHeight-ground.getHeight()){
                 points += 10;
@@ -134,7 +134,7 @@ public class GameView extends View {
         }
         canvas.drawRect(dWidth-200, 30,dWidth-200+60*life,80,healthPaint);// rysowanie HP
         canvas.drawText(" " + points,20,TEXT_SIZE,textPaint);
-        handler.postDelayed(runnable, UPDATE_MILLIS);
+        handler.postDelayed(runnable, 1/REFRESH_RATE);
         }
 
     @Override

@@ -4,9 +4,9 @@ package com.example.projectwjp;
 import android.graphics.Bitmap;
 
 public class Enemy {
-    Bitmap body;// TODO przypisac konkretne body
+    private Bitmap body;// TODO przypisac konkretne body
     private int diffLevel;
-    private int hp;
+    private int hp;//przeciwnost points z GameView TODO przeniesc tutaj
 
     private Type typ;
 

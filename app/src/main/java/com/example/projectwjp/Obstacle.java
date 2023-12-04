@@ -14,7 +14,8 @@ public class Obstacle {
     Random random;
 
     public Obstacle(Context context) {
-        this.body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.hero);// przydzielanie obrazu TODO rozne obrazy
+        body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle);// przydzielanie obrazu TODO rozne obrazy
+        body[0] = Bitmap.createScaledBitmap(body[0],200,200,true);
         random = new Random();
     }
     public void resetPosition(){
