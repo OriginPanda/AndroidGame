@@ -25,8 +25,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);// ustawia layout z pliku xml
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //Wlonczony ekran poki dziala aplikacja
 
     }
 
+    public void StartGame(View view) {
+        GameView gameView = new GameView(this);
+        setContentView(gameView);
+
+
+    }
 }

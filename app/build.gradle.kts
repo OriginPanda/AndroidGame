@@ -9,7 +9,7 @@ android {
     defaultConfig {
         applicationId = "com.example.projectwjp"
         minSdk = 24
-        targetSdk = 33
+        targetSdk = 34 //xD?
         versionCode = 1
         versionName = "1.0"
 
