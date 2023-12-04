@@ -43,10 +43,12 @@ public class GameView extends View {
     ArrayList<Obstacle> obstacles;
     ArrayList<Impact> impacts;
 
-    public GameView(Context context,Type typ) {
+    public GameView(Context context) {
         super(context);
-        enemy = new Enemy(typ);
+        //enemy = new Enemy(typ);
         this.context = context;
+        background = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame);
+        ground = BitmapFactory.decodeResource(getResources(),R.drawable.ground);
         hero = BitmapFactory.decodeResource(getResources(), R.drawable.hero);
         Display display = ((Activity)getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -56,19 +58,15 @@ public class GameView extends View {
         rectBackground = new Rect(0,0,dWidth,dHeight);
         rectGround = new Rect(0,dHeight-ground.getHeight(),dWidth,dHeight);
         handler = new Handler();
-        runnable = new Runnable(){
-            @Override
-            public void run(){
-                invalidate();// odswieżanie View (obrazu ekranu)
-            }
-        };
+        // odswieżanie View (obrazu ekranu)
+        runnable = this::invalidate;
         textPaint.setColor(Color.BLUE);
         textPaint.setTextSize(TEXT_SIZE);
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
         healthPaint.setColor(Color.GREEN);
         random = new Random();
-        heroX = dWidth / 2 - hero.getHeight()/2;
+        heroX = (float) dWidth / 2 - (float) hero.getHeight() /2;
         heroY = dHeight - ground.getHeight() - hero.getHeight();
         obstacles = new ArrayList<>();
         impacts = new ArrayList<>();
@@ -78,6 +76,7 @@ public class GameView extends View {
         }
 
     }
+
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
@@ -92,7 +91,7 @@ public class GameView extends View {
 //            if(obstacles.get(i).obsFrame>3){
 //                obstacles.get(i).obsFrame = 0;
 //            }
-            obstacles.get(i).obsY += obstacles.get(i).obsVelocity;
+            obstacles.get(i).obsY += 60 ;//obstacles.get(i).obsVelocity; TODO w zaleznosci od trudnosci
             // TODO Animacja impactu
             if(obstacles.get(i).obsY+obstacles.get(i).getObstacleHight()>=dHeight-ground.getHeight()){
                 points += 10;
@@ -102,7 +101,6 @@ public class GameView extends View {
                 impacts.add(impact);
                 obstacles.get(i).resetPosition();
             }
-
         }
         for(int i=0; i<obstacles.size();i++){
             Obstacle obs =obstacles.get(i);
@@ -137,8 +135,7 @@ public class GameView extends View {
         canvas.drawRect(dWidth-200, 30,dWidth-200+60*life,80,healthPaint);// rysowanie HP
         canvas.drawText(" " + points,20,TEXT_SIZE,textPaint);
         handler.postDelayed(runnable, UPDATE_MILLIS);
-
-    }
+        }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
@@ -151,13 +148,26 @@ public class GameView extends View {
                 oldheroX = heroX;
             }
             if(action == MotionEvent.ACTION_MOVE){
-
+                float shift = oldX-touchX;
+                float newheroX = oldheroX - shift;
+                if(newheroX <=0)
+                {
+                    heroX =0;
+                }
+                else if (newheroX >= dWidth - hero.getWidth())
+                {
+                    heroX = dWidth - hero.getWidth();
+                }
+                else{
+                    heroX = newheroX;
+                }
             }
         }
         return true;
-    }
+        }
 
-    protected boolean ifHit(Obstacle obs){
+
+    protected boolean ifHit( Obstacle obs){
         return(obs.obsX + obs.getObstacleWidth() >= heroX
             && obs.obsX <= heroX+hero.getWidth()
             && obs.obsY + obs.getObstacleWidth() >= heroY

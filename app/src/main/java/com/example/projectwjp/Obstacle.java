@@ -7,14 +7,14 @@ import android.graphics.BitmapFactory;
 import java.util.Random;
 
 public class Obstacle {
-    Bitmap [] body = new Bitmap[1];
+    private Bitmap [] body = new Bitmap[1];
     int obsFrame = 0;
     int animFrame = 1;
     int obsX , obsY, obsVelocity;
     Random random;
 
     public Obstacle(Context context) {
-        this.body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.stopsign);// przydzielanie obrazu TODO rozne obrazy
+        this.body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.hero);// przydzielanie obrazu TODO rozne obrazy
         random = new Random();
     }
     public void resetPosition(){

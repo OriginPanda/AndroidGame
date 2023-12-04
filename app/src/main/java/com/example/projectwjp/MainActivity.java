@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void StartGame(View view) {
-        GameView gameView = new GameView(this,Type.Addition);
+        GameView gameView = new GameView(this);
         setContentView(gameView);
 
 
