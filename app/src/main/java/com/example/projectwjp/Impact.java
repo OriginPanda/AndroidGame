@@ -7,7 +7,7 @@ public class Impact {
     public Bitmap body[] = new Bitmap[1];// ilosc obrazow do animacji  TODO zrobienie obrazow do animacji i ilosc
     int impactFrame = 0;
     int animFrame = 1;
-    int impactX,impactY;
+    float impactX,impactY;
 
     public Impact(Context context){
         body[0] = BitmapFactory.decodeResource(context.getResources(),R.drawable.impact1);
@@ -17,5 +17,6 @@ public class Impact {
     public Bitmap getImpactAnim(int Frame){
         return body[Frame];
     }
+
 
 }

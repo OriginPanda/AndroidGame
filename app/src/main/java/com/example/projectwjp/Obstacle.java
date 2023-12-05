@@ -6,27 +6,33 @@ import android.graphics.BitmapFactory;
 
 import java.util.Random;
 
-public class Obstacle {
-    private Bitmap [] body = new Bitmap[1];
-    int obsFrame = 0;
-    int animFrame = 1;
-    int obsX , obsY, obsVelocity;
+public class Obstacle extends Actor{
+
+
+
+    private int obsVelocity = 20; //
     Random random;
 
+    private Impact impact;
     public Obstacle(Context context) {
-        body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle);// przydzielanie obrazu TODO rozne obrazy
-        body[0] = Bitmap.createScaledBitmap(body[0],200,200,true);
+        size = 200;
+        body = new Bitmap[2];
+
+        body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle1);// przydzielanie obrazu TODO rozne obrazy
+        body[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle2);// przydzielanie obrazu TODO rozne obrazy
+
+        body[0] = Bitmap.createScaledBitmap(body[0],size,size,true);
+        body[1] = Bitmap.createScaledBitmap(body[1],size,size,true);
         random = new Random();
     }
     public void resetPosition(){
-        obsX = random.nextInt(GameView.dWidth - getObstacleWidth());
-        obsY= -200 + random.nextInt(600)*-1;
+        actX = random.nextInt(GameView.dWidth - getObstacleWidth());
+        actY = -200 + random.nextInt(600)*-1;
         obsVelocity = 35+random.nextInt(16);
     }
 
-    public Bitmap getbody(){   //TODO eweontualna animacja
-        return body[obsFrame];
-    }
+
+
 
     public int getObstacleWidth(){
         return body[0].getWidth();
@@ -35,5 +41,26 @@ public class Obstacle {
 
         return body[0].getHeight();
     }
+    public void fall(){
+        actY += obsVelocity;
+    }
+    public boolean ifGroundHit(int dHeight,int gHeight){
+        return (actY+getObstacleHight()>=dHeight-gHeight);
 
+    }
+    public void onGroundHit(Context context){
+        Impact impact = new Impact(context);
+        impact.impactX =actX;
+        impact.impactY = actY;
+
+    }
+    @Override
+    public void onHit() {
+
+        resetPosition();
+    }
+
+    public Impact getImpact() {
+        return impact;
+    }
 }

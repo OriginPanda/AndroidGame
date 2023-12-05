@@ -22,42 +22,45 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class GameView extends View {
-    private Bitmap background, ground, hero;
+    private Map mapa;
     private Rect rectBackground, rectGround;
     private Context context;
     private Handler handler;
     private Enemy enemy;
-    private final long REFRESH_RATE = 60;
+    private Hero hero;
+    private final int REFRESH_RATE = 60;
     private Runnable runnable;
     private Paint textPaint = new Paint();
     private Paint healthPaint = new Paint();
     private float TEXT_SIZE = 120;
-    private int points = 0;//Enemy Hp TODO zmiana klasy
-    private int life = 3;
+    // private int points = 0; //Enemy Hp TODO zmiana klasy
     protected static int dWidth, dHeight;
     private Random random;
-    private float heroX, heroY;
     private float oldX;
     private float oldheroX;
-    private ArrayList<Obstacle> obstacles;
-    private ArrayList<Impact> impacts;
+
 
     public GameView(Context context) {
         super(context);
 
-        //enemy = new Enemy(typ);
+        enemy = new Enemy();
         this.context = context;
-        background = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame);
-        ground = BitmapFactory.decodeResource(getResources(),R.drawable.ground);
-        hero = BitmapFactory.decodeResource(getResources(), R.drawable.hero);
+        mapa = new Map(BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame),BitmapFactory.decodeResource(getResources(),R.drawable.ground));
+
+
+
+
+        //
         Display display = ((Activity)getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
         display.getSize(size);
         dWidth = size.x;
         dHeight = size.y;
+
         rectBackground = new Rect(0,0,dWidth,dHeight);
-        rectGround = new Rect(0,dHeight-ground.getHeight(),dWidth,dHeight);
+        rectGround = new Rect(0,dHeight-mapa.ground.getHeight(),dWidth,dHeight);
         handler = new Handler();
+
         // odswieżanie View (obrazu ekranu)
         runnable = this::invalidate;
         textPaint.setColor(Color.BLUE);
@@ -65,14 +68,19 @@ public class GameView extends View {
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
         healthPaint.setColor(Color.GREEN);
+
+        hero = new Hero(context);
         random = new Random();
-        heroX = (float) dWidth / 2 - (float) hero.getHeight() /2;
-        heroY = dHeight - ground.getHeight() - hero.getHeight();
-        obstacles = new ArrayList<>();
-        impacts = new ArrayList<>();
+
+        hero.actX = (float) dWidth / 2 - (float) hero.getbody().getHeight() /2;
+        hero.actY = dHeight - mapa.ground.getHeight() - hero.getbody().getHeight();
+
+
+
         for(int i=0; i<3;i++){
             Obstacle obs = new Obstacle(context);
-            obstacles.add(obs);
+            enemy.obstacles.add(obs);
+            obs.resetPosition();
         }
 
     }
@@ -80,60 +88,52 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        canvas.drawBitmap(background, null, rectBackground,null);
-        canvas.drawBitmap(ground, null,rectGround,null);
-        canvas.drawBitmap(hero,heroX,heroY,null);
-        for(int i=0; i<obstacles.size();i++){
-            canvas.drawBitmap(obstacles.get(i).getbody(),obstacles.get(i).obsX,obstacles.get(i).obsY,null);
+        canvas.drawBitmap(mapa.background, null, rectBackground,null);
+        canvas.drawBitmap(mapa.ground, null,rectGround,null);
+        canvas.drawBitmap(hero.getbody(),hero.actX,hero.actY,null);
 
-//            TODO animacja
-//            obstacles.get(i).obsFrame++;
-//            if(obstacles.get(i).obsFrame>3){
-//                obstacles.get(i).obsFrame = 0;
-//            }
-            obstacles.get(i).obsY += 20 ;//obstacles.get(i).obsVelocity; TODO w zaleznosci od trudnosci
+        for(int i=0; i<enemy.obstacles.size();i++){
+            Obstacle obs = enemy.obstacles.get(i);
+            canvas.drawBitmap(obs.getbody(),obs.actX,obs.actY,null);
+
+
+            obs.animation(REFRESH_RATE);
+
+            obs.actY += 20 ;//enemy.obstacles.get(i).obsVelocity; //TODO w zaleznosci od trudnosci
+
             // TODO Animacja impactu
-            if(obstacles.get(i).obsY+obstacles.get(i).getObstacleHight()>=dHeight-ground.getHeight()){
-                points += 10;
-                Impact impact = new Impact(context);// Alokacja ?
-                impact.impactX =obstacles.get(i).obsX;
-                impact.impactY = obstacles.get(i).obsY;
-                impacts.add(impact);
-                obstacles.get(i).resetPosition();
-            }
-        }
-        for(int i=0; i<obstacles.size();i++){
-            Obstacle obs =obstacles.get(i);
-            if(ifHit(obs)){
-                life--;
+            //enemy.obstacles.get(i).actY +enemy.obstacles.get(i).getObstacleHight()>=dHeight-mapa.ground.getHeight()
+            if(obs.ifGroundHit(dHeight,mapa.ground.getHeight())){
+                enemy.onHit();
+                obs.onGroundHit(context);
+               // canvas.drawBitmap(obs.getImpact().getImpactAnim(obs.getImpact().impactFrame),obs.getImpact().impactX,obs.getImpact().impactY,null);
                 obs.resetPosition();
-                if(life==0){
+            }
+            if(hero.ifHit(obs)){
+                obs.onHit();
+                hero.onHit();
+
+                if(hero.getHeroHP()<=0){
                     Intent intent = new Intent(context, GameOver.class);
-                    intent.putExtra("points",points);
+                    intent.putExtra("points",enemy.getEnemyHP());
                     context.startActivity(intent);
                     ((Activity) context).finish();
                 }
             }
 
+
         }
-        // TODO zmiana do animacji impactu
-        for(int i = 0 ; i<impacts.size();i++){
-            Impact imp = impacts.get(i);
-            canvas.drawBitmap(imp.getImpactAnim(imp.impactFrame),imp.impactX,imp.impactY,null);
-            imp.impactFrame++;
-            if(imp.impactFrame>=imp.animFrame){
-                impacts.remove(i);
-            }
-        }
-        // TODO zmiana do bohatera
-        if(life == 2){
+
+
+
+        if(hero.getHeroHP() <= 70 && hero.getHeroHP() >= 40){
             healthPaint.setColor(Color.YELLOW);
         }
-        else if(life==1){
+        else if(hero.getHeroHP()<=40){
             healthPaint.setColor(Color.RED);
         }
-        canvas.drawRect(dWidth-200, 30,dWidth-200+60*life,80,healthPaint);// rysowanie HP
-        canvas.drawText(" " + points,20,TEXT_SIZE,textPaint);
+        canvas.drawRect(dWidth-200, 30,dWidth-200+1.8f*hero.getHeroHP(),80,healthPaint);// rysowanie HP
+        canvas.drawText(" " + enemy.getEnemyHP(),20,TEXT_SIZE,textPaint);
         handler.postDelayed(runnable, 1/REFRESH_RATE);
         }
 
@@ -141,25 +141,25 @@ public class GameView extends View {
     public boolean onTouchEvent(MotionEvent event) {
         float touchX = event.getX();
         float touchY = event.getY();
-        if(touchY>=heroY){
+        if(touchY>=hero.actY){
             int action = event.getAction();
             if(action == MotionEvent.ACTION_DOWN){
                 oldX = event.getX();
-                oldheroX = heroX;
+                oldheroX = hero.actX;
             }
             if(action == MotionEvent.ACTION_MOVE){
                 float shift = oldX-touchX;
                 float newheroX = oldheroX - shift;
                 if(newheroX <=0)
                 {
-                    heroX =0;
+                    hero.actX =0;
                 }
-                else if (newheroX >= dWidth - hero.getWidth())
+                else if (newheroX >= dWidth - hero.getbody().getWidth())
                 {
-                    heroX = dWidth - hero.getWidth();
+                    hero.actX = dWidth - hero.getbody().getWidth();
                 }
                 else{
-                    heroX = newheroX;
+                    hero.actX = newheroX;
                 }
             }
         }
@@ -167,12 +167,6 @@ public class GameView extends View {
         }
 
 
-    protected boolean ifHit( Obstacle obs){
-        return(obs.obsX + obs.getObstacleWidth() >= heroX
-            && obs.obsX <= heroX+hero.getWidth()
-            && obs.obsY + obs.getObstacleWidth() >= heroY
-            && obs.obsY+obs.getObstacleWidth() <= heroY+hero.getHeight());
-    }
 
 
 
