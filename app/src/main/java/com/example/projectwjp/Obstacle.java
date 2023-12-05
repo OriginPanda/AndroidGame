@@ -11,7 +11,7 @@ public class Obstacle extends Actor{
 
 
     private int obsVelocity = 20; //
-    Random random;
+    private Random random;
 
     private Impact impact;
     public Obstacle(Context context) {

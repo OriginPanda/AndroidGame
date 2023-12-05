@@ -16,12 +16,12 @@ public class Hero extends Actor {
     public int getHeroHP() {
         return heroHP;
     }
-    protected boolean ifHit( Obstacle obs){
+    protected boolean ifHit( Actor obs){
 
-        return(obs.actX + obs.getObstacleWidth() >= this.actX
+        return(obs.actX + obs.body[0].getWidth() >= this.actX
                 && obs.actX <= this.actX+getbody().getWidth()
-                && obs.actY + obs.getObstacleWidth() >= this.actY
-                && obs.actY +obs.getObstacleWidth() <= this.actY+getbody().getHeight());
+                && obs.actY + obs.body[0].getWidth()  >= this.actY
+                && obs.actY +obs.body[0].getWidth()  <= this.actY+getbody().getHeight());
     }
 
     @Override
