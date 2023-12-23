@@ -33,7 +33,7 @@ public class Obstacle extends Actor{
 
 
 
-
+    //TODO wywalenie ponizszych funckji
     public int getObstacleWidth(){
         return body[0].getWidth();
     }
