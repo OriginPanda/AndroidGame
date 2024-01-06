@@ -12,8 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class GameOver extends AppCompatActivity {
 
-        SharedPreferences sharedPreferences;
+    SharedPreferences sharedPreferences;
 
+    TextView result;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -21,6 +22,16 @@ public class GameOver extends AppCompatActivity {
         setContentView(R.layout.game_over);
 
         int enemyHP = getIntent().getExtras().getInt("enemyHP");
+        boolean won = getIntent().getExtras().getBoolean("won");
+        result = findViewById(R.id.resultText);
+
+        if(won){
+            result.setText("Wygrana");
+
+        }
+        else if (!won) {
+            result.setText("Przegrana");
+        }
 
         sharedPreferences = getSharedPreferences("my_pref",0);
 

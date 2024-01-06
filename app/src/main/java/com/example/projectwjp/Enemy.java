@@ -24,7 +24,7 @@ public class Enemy extends Actor {
     }
     @Override
     public void onHit() {
-        enemyHP+=10;
+        enemyHP-=10;
     }
     public int getEnemyHP() {
         return enemyHP;

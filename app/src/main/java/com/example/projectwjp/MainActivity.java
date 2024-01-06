@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import com.google.android.material.snackbar.Snackbar;
-
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
@@ -93,10 +93,12 @@ public class MainActivity extends AppCompatActivity {
 
         b.setClickable(false);
         b.setVisibility(View.GONE);
-
         FragmentManager fragmentManager = getSupportFragmentManager();
+        Bundle args = new Bundle();
+        args.putInt("diffLevel",1);
+        args.putString("levelType",Type.Addition.toString());
 
-        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, GameFragment.class, null).setReorderingAllowed(true).addToBackStack("name").commit();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, GameFragment.class, args).setReorderingAllowed(true).addToBackStack("name").commit();
 
 //        GameFragment gameFragment = GameFragment.newInstance(1,Type.Addition);
 //
@@ -104,6 +106,19 @@ public class MainActivity extends AppCompatActivity {
 
         //GameView gameView = new GameView(context);
         //setContentView(gameView);
+    }
+
+    //Dużo roboty by inaczej zrobić
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+        b.setClickable(true);
+        b.setVisibility(View.VISIBLE);
+        animation = AnimationUtils.loadAnimation(this,R.anim.fadein);
+        b.startAnimation(animation);
+
+
+
     }
 
 }

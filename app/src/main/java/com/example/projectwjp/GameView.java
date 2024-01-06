@@ -35,8 +35,7 @@ public class GameView extends View {
     private Runnable runnable;
     private Paint textPaint = new Paint();
 
-    private float TEXT_SIZE = 120;
-    // private int points = 0; //Enemy Hp TODO zmiana klasy
+    private float TEXT_SIZE = 200;
     protected static int dWidth, dHeight;
     private Random random;
     private float oldX;
@@ -47,12 +46,13 @@ public class GameView extends View {
     public GameView(Context context) {
 
         super(context);
+        //GameFragment Fragment = FragmentManager().findFragmentByTag(FRAGMENT_TAG);
+        //GameFragment gameFragment = FragmentManager.findFragment(this); NIE DZIAŁA ???
 
-//        GameFragment gameFragment = FragmentManager.findFragment(this);
-//        Bundle args = new Bundle();
-//        args = gameFragment.getArguments();
+        //Bundle args = gameFragment.getArguments();
 
         //enemy = new Enemy(args.getInt("diffLevel",0),Type.valueOf(args.getString("levelType","Addition")));
+
 
         enemy = new Enemy(1,Type.Addition);
         this.context = context;
@@ -69,7 +69,7 @@ public class GameView extends View {
         handler = new Handler();
 
 
-        runnable = this::invalidate;// odswieżanie View (obrazu ekranu)
+        runnable = this::invalidate;
 
         textPaint.setColor(Color.BLUE);
         textPaint.setTextSize(TEXT_SIZE);
@@ -109,10 +109,18 @@ public class GameView extends View {
 
             // TODO Animacja impactu
             //enemy.obstacles.get(i).actY +enemy.obstacles.get(i).getObstacleHight()>=dHeight-mapa.ground.getHeight()
+
             if(obs.ifGroundHit(dHeight,mapa.ground.getHeight())){
+
                 enemy.onHit();
+                if(enemy.getEnemyHP() <=0 && !isEnd){
+                    isEnd = true;
+                    endGame(true);
+                }
+
+
                 obs.onGroundHit(context);
-               // canvas.drawBitmap(obs.getImpact().getImpactAnim(obs.getImpact().impactFrame),obs.getImpact().impactX,obs.getImpact().impactY,null);
+                // canvas.drawBitmap(obs.getImpact().getImpactAnim(obs.getImpact().impactFrame),obs.getImpact().impactX,obs.getImpact().impactY,null);
                 obs.resetPosition();
             }
 
@@ -120,15 +128,11 @@ public class GameView extends View {
 
 
             //Koniec gry
-            if(enemy.getEnemyHP()<=0){
-                isEnd = true;
-                endGame(true);
-                
-            }
+
             if(hero.ifHit(obs)){
                 obs.onHit();
                 hero.onHit();
-                if(hero.getHeroHP()<=0 && isEnd==false){ // dodanie isEnd by tylko jedno okno sie otworzyło
+                if(hero.getHeroHP()<=0 && !isEnd){ // dodanie isEnd by tylko jedno okno sie otworzyło
 
                     isEnd = true;
                     endGame(false);
@@ -146,7 +150,7 @@ public class GameView extends View {
 
         canvas.drawRect(dWidth-200, 30,dWidth-200+1.8f*hero.getHeroHP(),80,mapa.getHealthPaint());// rysowanie HP
         canvas.drawText(" " + enemy.getEnemyHP(),20,TEXT_SIZE,textPaint);// TODO zmiana na max hp
-        handler.postDelayed(runnable, (1/REFRESH_RATE)*1000);
+        handler.postDelayed(runnable, (1/REFRESH_RATE)*1000);// odswieżanie View (obrazu ekranu)
 
 
         }
@@ -179,7 +183,8 @@ public class GameView extends View {
         }
         return true;
         }
-        void endGame(boolean won){
+
+        public void endGame(boolean won){
 
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("enemyHP",enemy.getEnemyHP());
