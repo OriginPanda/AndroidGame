@@ -1,92 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroundgame">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="restart"
-            android:onClick="restart"/>
+    <Button
+        android:id="@+id/button"
+        android:layout_width="182dp"
+        android:layout_height="99dp"
+        android:layout_marginBottom="368dp"
+        android:onClick="restart"
+        android:text="restart"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.506"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <!-- Zmiana restartu na cos innego-->
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="185dp"
+        android:layout_height="100dp"
+        android:onClick="menu"
+        android:text="Menu"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
-
-        <View
-            android:layout_width="1dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"/>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="exit"
-            android:onClick="exit"/>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/scrhighscore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/title"
-            android:visibility="gone" />
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TableRow
-                android:layout_width="match_parent"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Your Points"
-                    android:textSize="24sp"/>
-                <TextView
-                    android:id="@+id/scrpoints"
-                    android:layout_height="wrap_content"
-                    android:layout_width="wrap_content"
-                    android:text="50"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/holo_green_dark"
-                    android:fontFamily="@font/nova"/>
-            </TableRow>
-            <TableRow
-                android:layout_width="match_parent"
-                android:gravity="center">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Highest Score: "
-                    android:textSize="24sp"
-                    android:layout_gravity="center|end"/>
-                <TextView
-                    android:id="@+id/scrhighest"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="100"
-                    android:textSize="24sp"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:fontFamily="@font/nova"/>
-
-            </TableRow>
-        </TableLayout>
-        <View
-            android:layout_width="1dp"
-            android:layout_height="80dp"/>
-    </LinearLayout>
-
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="84dp"
+        android:text="Wynik"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
