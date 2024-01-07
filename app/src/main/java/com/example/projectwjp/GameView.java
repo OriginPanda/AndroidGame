@@ -85,6 +85,8 @@ public class GameView extends View {
 
 
         mapa.updateHPBar(hero.getHeroHP());
+
+        //TODO zmiana ilosci wzgledem trudnosci
         for(int i=0; i<3;i++){
             Obstacle obs = new Obstacle(context);
             enemy.obstacles.add(obs);
@@ -96,13 +98,18 @@ public class GameView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
+
         canvas.drawBitmap(mapa.background, null, rectBackground,null);
         canvas.drawBitmap(mapa.ground, null,rectGround,null);
+
         canvas.drawBitmap(hero.getbody(),hero.actX,hero.actY,null);
 
         for(int i=0; i<enemy.obstacles.size();i++){
+
+
             Obstacle obs = enemy.obstacles.get(i);
             canvas.drawBitmap(obs.getbody(),obs.actX,obs.actY,null);
+            canvas.drawText("2",obs.actX,obs.actY,textPaint);
             obs.animation(REFRESH_RATE);
             obs.fall();
 

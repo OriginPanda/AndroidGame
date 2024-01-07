@@ -21,9 +21,10 @@ public class GameOver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_over);
 
-        int enemyHP = getIntent().getExtras().getInt("enemyHP");
-        boolean won = getIntent().getExtras().getBoolean("won");
+        int enemyHP = getIntent().getExtras().getInt("enemyHP",999);
+        boolean won = getIntent().getExtras().getBoolean("won",false);
         result = findViewById(R.id.resultText);
+
 
         if(won){
             result.setText("Wygrana");

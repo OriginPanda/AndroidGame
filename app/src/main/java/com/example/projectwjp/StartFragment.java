@@ -3,10 +3,13 @@ package com.example.projectwjp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,7 +17,8 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class StartFragment extends Fragment {
-
+    private Button b;
+    private Animation animation;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -60,8 +64,32 @@ public class StartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_main, container, false);
-    }
 
+        View view = inflater.inflate(R.layout.fragment_start, container, false);
+        b = (Button)view.findViewById(R.id.startbutton);
+
+        //OnClick w XML przycisku nie działa xD?
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StartGame(view);
+            }
+        });
+
+        return view;
+    }
+    public void StartGame(View view){
+
+
+
+        Bundle args = new Bundle();
+        args.putInt("diffLevel",1);
+        args.putString("levelType",Type.Addition.toString());
+
+        FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, GameFragment.class, args).setReorderingAllowed(true).addToBackStack(null).commit();
+
+
+    }
 }

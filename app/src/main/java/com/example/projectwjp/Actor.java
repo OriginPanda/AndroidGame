@@ -1,6 +1,7 @@
 package com.example.projectwjp;
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
 public abstract class Actor {
     protected Bitmap[] body;// ilosc slajdow animacji
@@ -28,9 +29,9 @@ public abstract class Actor {
     public Bitmap getbody(){
         return body[obsFrame];
     }
-    public void move(){
 
-    }
     public abstract void onHit();
+    public abstract void draw(Canvas canvas);
+    public abstract void onTick(Canvas canvas);
 
 }

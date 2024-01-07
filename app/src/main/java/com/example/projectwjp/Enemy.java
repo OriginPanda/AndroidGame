@@ -2,6 +2,7 @@ package com.example.projectwjp;
 
 
 import android.graphics.Bitmap;
+import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
@@ -26,6 +27,17 @@ public class Enemy extends Actor {
     public void onHit() {
         enemyHP-=10;
     }
+
+    @Override
+    public void draw(Canvas canvas) {
+
+    }
+
+    @Override
+    public void onTick(Canvas canvas) {
+
+    }
+
     public int getEnemyHP() {
         return enemyHP;
     }

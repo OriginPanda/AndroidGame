@@ -3,16 +3,18 @@ package com.example.projectwjp;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.widget.TextView;
 
 import java.util.Random;
 
 public class Obstacle extends Actor{
 
 
-
+    private int baseVelocity = 35;
     private int obsVelocity; //
     private Random random;
-
+    private TextView number;
     private Impact impact;
     public Obstacle(Context context) {
         size = 200; //TODO skalowanie z ekranem
@@ -29,10 +31,11 @@ public class Obstacle extends Actor{
 
         actX = random.nextInt(GameView.dWidth - size);
         actY = -200 + random.nextInt(600)*-1;
-        obsVelocity = 35+random.nextInt(20);//TODO w zaleznosci od trudnosci
+        obsVelocity = baseVelocity+random.nextInt(30);//TODO w zaleznosci od trudnosci
+
     }
     public void updatePosition(){
-        actY += obsVelocity;
+        //TODO update position?
 
     }
 
@@ -55,6 +58,16 @@ public class Obstacle extends Actor{
     public void onHit() {
 
         resetPosition();
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+
+    }
+
+    @Override
+    public void onTick(Canvas canvas) {
+
     }
 
     public Impact getImpact() {

@@ -8,7 +8,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -66,11 +68,26 @@ public class GameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        LinearLayout layout = new LinearLayout(getContext());
+        ViewGroup layout = new FrameLayout(getContext());
+        TextView textView1 = new TextView(getContext());
+        textView1.setText("View 1");
+        textView1.setTextSize(24);
+        GameView gameView = new GameView(getContext());
+        View view = inflater.inflate(R.layout.fragment_game,container,false);
+
+        gameView.setLayoutParams(new FrameLayout.LayoutParams(
+                FrameLayout.LayoutParams.WRAP_CONTENT,
+                FrameLayout.LayoutParams.WRAP_CONTENT));
+
         layout.addView(new GameView(getContext()));
+        layout.addView(view);
+
+
+
 
         return layout;
                 //new GameView(getContext());//inflater.inflate(R.layout.fragment_game, container, false);
     }
+
+
 }

@@ -3,6 +3,7 @@ package com.example.projectwjp;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 
 public class Hero extends Actor {
 
@@ -27,5 +28,15 @@ public class Hero extends Actor {
     @Override
     public void onHit() {
         heroHP-=10;
+    }
+
+    @Override
+    public void draw(Canvas canvas) {
+
+    }
+
+    @Override
+    public void onTick(Canvas canvas) {
+
     }
 }
