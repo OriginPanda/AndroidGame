@@ -1,23 +1,123 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/FragmentGame"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GameFragment"
-    android:id="@+id/FragmentGame">
+    tools:context=".GameFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment"
-        android:textSize="60sp" />
+        android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="300dp"
-        android:layout_height="479dp"
-        android:text="TextView" />
+        <TextView
+            android:id="@+id/levelType"
+            android:layout_width="393dp"
+            android:layout_height="26dp"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:text="Nazwa"
+            android:textAlignment="center"
+            android:textColor="@color/yellow_green"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/levelEquation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/levelEquation"
+            android:layout_width="390dp"
+            android:layout_height="42dp"
+            android:fontFamily="@font/arcade"
+            android:text="Rownanie"
+            android:textAlignment="center"
+            android:textColor="@color/yellow_green"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelType" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button3"
+            android:layout_width="75dp"
+            android:layout_height="57dp"
+            android:text="Pauza"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ProgressBar
+            android:id="@+id/heroHPBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="259dp"
+            android:layout_height="41dp"
+            android:max="100"
+            android:maxWidth="100dip"
+            android:maxHeight="100dip"
+            android:minWidth="50dip"
+            android:minHeight="50dip"
+            android:progress="50"
+            android:progressTint="#4CAF50"
+            android:scaleY="4"
+            app:layout_constraintBottom_toTopOf="@+id/enemyHPBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/levelEquation" />
+
+        <ProgressBar
+            android:id="@+id/enemyHPBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="263dp"
+            android:layout_height="34dp"
+            android:maxWidth="100dip"
+            android:maxHeight="100dip"
+            android:minWidth="50dip"
+            android:minHeight="50dip"
+            android:progress="50"
+            android:progressTint="#E91E1E"
+            android:scaleY="4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/heroHPBar" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="122dp"
+            android:layout_height="32dp"
+            android:fontFamily="@font/arcade"
+            android:text="Enemy HP"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/enemyHPBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="127dp"
+            android:layout_height="43dp"
+            android:fontFamily="@font/arcade"
+            android:text="Your HP"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
+            app:layout_constraintEnd_toStartOf="@+id/heroHPBar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/levelEquation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

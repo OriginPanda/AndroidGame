@@ -5,10 +5,12 @@
     <item
         android:id="@+id/action_settings"
         android:icon="@drawable/hero"
+        android:onClick="upLevel"
         android:orderInCategory="101"
-        android:title="@string/action_settings"
+        android:title="Zwieksz Poziom Trudnosci"
         app:showAsAction="never" />
     <item
+        android:onClick="downLevel"
         android:orderInCategory="102"
-        android:title="Item" />
+        android:title="Zmniejsz Poziom Trudnosci" />
 </menu>

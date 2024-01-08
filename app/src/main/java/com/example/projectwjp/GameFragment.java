@@ -2,14 +2,13 @@ package com.example.projectwjp;
 
 import android.os.Bundle;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -68,18 +67,28 @@ public class GameFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+
+
         ViewGroup layout = new FrameLayout(getContext());
-        TextView textView1 = new TextView(getContext());
-        textView1.setText("View 1");
-        textView1.setTextSize(24);
-        GameView gameView = new GameView(getContext());
+
+
         View view = inflater.inflate(R.layout.fragment_game,container,false);
 
-        gameView.setLayoutParams(new FrameLayout.LayoutParams(
-                FrameLayout.LayoutParams.WRAP_CONTENT,
-                FrameLayout.LayoutParams.WRAP_CONTENT));
-
-        layout.addView(new GameView(getContext()));
+//        gameView.setLayoutParams(new FrameLayout.LayoutParams(
+//                FrameLayout.LayoutParams.WRAP_CONTENT,
+//                FrameLayout.LayoutParams.WRAP_CONTENT));
+        Button b = (Button)view.findViewById(R.id.button3);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView textView = view.findViewById(R.id.levelType);
+                textView.setText("seima");//TODO PAUZA
+                Test(view);
+            }
+        });
+        GameView gameView = new GameView(getContext(),view,getArguments());
+        layout.addView(gameView);
         layout.addView(view);
 
 
@@ -88,6 +97,8 @@ public class GameFragment extends Fragment {
         return layout;
                 //new GameView(getContext());//inflater.inflate(R.layout.fragment_game, container, false);
     }
+    public void Test(View view){
 
+    }
 
 }

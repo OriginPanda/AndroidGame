@@ -22,15 +22,5 @@ public class Map {
         this.background = background;
         this.ground = ground;
     }
-    public void updateHPBar(int hp){
-
-        healthPaint.setColor(Color.GREEN);
-        if(hp <= 70 && hp >= 40){
-            healthPaint.setColor(Color.YELLOW);
-        }
-        else if(hp<=40){
-            healthPaint.setColor(Color.RED);
-        }
-    }
 
 }

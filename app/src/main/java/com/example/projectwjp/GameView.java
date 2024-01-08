@@ -3,7 +3,6 @@ package com.example.projectwjp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -16,12 +15,11 @@ import android.view.MotionEvent;
 import android.view.View;
 
 import android.os.Handler;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
 import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class GameView extends View {
@@ -34,27 +32,36 @@ public class GameView extends View {
     private final int REFRESH_RATE = 60;
     private Runnable runnable;
     private Paint textPaint = new Paint();
-
+    private Paint numberPaint = new Paint();
     private float TEXT_SIZE = 200;
+    private float NUMBER_SIZE = 150;
     protected static int dWidth, dHeight;
     private Random random;
     private float oldX;
     private float oldheroX;
     private boolean isEnd = false;
-
-
-    public GameView(Context context) {
+    TextView levelType;
+    TextView levelEquation;
+    ProgressBar enemyHPBar;
+    ProgressBar heroHPBar;
+    int siema = 0;
+    public GameView(Context context, View viewUI, Bundle args) {
 
         super(context);
-        //GameFragment Fragment = FragmentManager().findFragmentByTag(FRAGMENT_TAG);
-        //GameFragment gameFragment = FragmentManager.findFragment(this); NIE DZIAŁA ???
-
-        //Bundle args = gameFragment.getArguments();
-
-        //enemy = new Enemy(args.getInt("diffLevel",0),Type.valueOf(args.getString("levelType","Addition")));
 
 
-        enemy = new Enemy(1,Type.Addition);
+        this.levelEquation = viewUI.findViewById(R.id.levelEquation);
+        this.levelType = viewUI.findViewById(R.id.levelType);
+        this.enemyHPBar = viewUI.findViewById(R.id.enemyHPBar);
+        this.heroHPBar = viewUI.findViewById(R.id.heroHPBar);
+
+
+
+
+        enemy = new Enemy(args.getInt("diffLevel",1),Type.valueOf(args.getString("levelType")));
+
+
+
         this.context = context;
         mapa = new Map(BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame),BitmapFactory.decodeResource(getResources(),R.drawable.ground));
 
@@ -76,6 +83,10 @@ public class GameView extends View {
         textPaint.setTextAlign(Paint.Align.LEFT);
         textPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
 
+        numberPaint.setColor(Color.YELLOW);
+        numberPaint.setTextSize(NUMBER_SIZE);
+        numberPaint.setTextAlign(Paint.Align.CENTER);
+        numberPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
 
         hero = new Hero(context);
         random = new Random();
@@ -83,14 +94,25 @@ public class GameView extends View {
         hero.actX = (float) dWidth / 2 - (float) hero.getbody().getHeight() /2;
         hero.actY = dHeight - mapa.ground.getHeight() - hero.getbody().getHeight();
 
+        levelEquation.setText(enemy.getEquation());
+        levelType.setText(enemy.getType().toString());
 
-        mapa.updateHPBar(hero.getHeroHP());
+        enemyHPBar.setMax(enemy.getEnemyHP());
+        heroHPBar.setMax(hero.getHeroHP());
 
-        //TODO zmiana ilosci wzgledem trudnosci
-        for(int i=0; i<3;i++){
-            Obstacle obs = new Obstacle(context);
+        enemyHPBar.setProgress(enemy.getEnemyHP());
+        heroHPBar.setProgress(hero.getHeroHP());
+
+
+
+
+        //enemy.setEquation();
+        for(int i=0; i<enemy.getDiffLevel()+2;i++){
+            Obstacle obs = new Obstacle(context,numberPaint);
             enemy.obstacles.add(obs);
             obs.resetPosition();
+
+            obs.setNumber(enemy.getNumbers()[i]);
         }
 
     }
@@ -103,63 +125,73 @@ public class GameView extends View {
         canvas.drawBitmap(mapa.ground, null,rectGround,null);
 
         canvas.drawBitmap(hero.getbody(),hero.actX,hero.actY,null);
+        enemyHPBar.setProgress(enemy.getEnemyHP());
+        heroHPBar.setProgress(hero.getHeroHP());
 
         for(int i=0; i<enemy.obstacles.size();i++){
 
 
             Obstacle obs = enemy.obstacles.get(i);
-            canvas.drawBitmap(obs.getbody(),obs.actX,obs.actY,null);
-            canvas.drawText("2",obs.actX,obs.actY,textPaint);
+
+            obs.draw(canvas);
+            enemy.obstacles.get(i).setNumber(enemy.getNumbers()[i]);
             obs.animation(REFRESH_RATE);
             obs.fall();
 
-
             // TODO Animacja impactu
-            //enemy.obstacles.get(i).actY +enemy.obstacles.get(i).getObstacleHight()>=dHeight-mapa.ground.getHeight()
 
             if(obs.ifGroundHit(dHeight,mapa.ground.getHeight())){
 
-                enemy.onHit();
-                if(enemy.getEnemyHP() <=0 && !isEnd){
-                    isEnd = true;
-                    endGame(true);
-                }
-
-
                 obs.onGroundHit(context);
                 // canvas.drawBitmap(obs.getImpact().getImpactAnim(obs.getImpact().impactFrame),obs.getImpact().impactX,obs.getImpact().impactY,null);
-                obs.resetPosition();
             }
-
-
-
 
             //Koniec gry
 
             if(hero.ifHit(obs)){
                 obs.onHit();
-                hero.onHit();
+
+                //
+
+                if(obs.getNumber()==enemy.getAnswer())
+                {
+                    enemy.onHit();
+
+
+                    if(enemy.getEnemyHP() <=0 && !isEnd){
+                        isEnd = true;
+                        endGame(true);
+                    }
+                    else{
+                        for(int j=0; j<enemy.getDiffLevel()+2;j++){
+
+                            enemy.obstacles.get(j).resetPosition();
+                            enemy.setEquation();
+                            levelEquation.setText(enemy.getEquation());
+
+                        }
+                    }
+
+                }
+                else{
+                    hero.onHit();
+                }
+
                 if(hero.getHeroHP()<=0 && !isEnd){ // dodanie isEnd by tylko jedno okno sie otworzyło
 
                     isEnd = true;
                     endGame(false);
 
-
                 }
             }
-            
-
-
         }
 
 
-        mapa.updateHPBar(hero.getHeroHP());
 
-        canvas.drawRect(dWidth-200, 30,dWidth-200+1.8f*hero.getHeroHP(),80,mapa.getHealthPaint());// rysowanie HP
-        canvas.drawText(" " + enemy.getEnemyHP(),20,TEXT_SIZE,textPaint);// TODO zmiana na max hp
-        handler.postDelayed(runnable, (1/REFRESH_RATE)*1000);// odswieżanie View (obrazu ekranu)
-
-
+        //canvas.drawRect(dWidth-200, 30,dWidth-200+1.8f*enemy.getEnemyHP(),80,mapa.getHealthPaint());// rysowanie HP
+        //canvas.drawText( " "+ enemy.getEnemyHP(),20,TEXT_SIZE,textPaint);// TODO zmiana na max hp
+        handler.postDelayed(runnable, 1000/REFRESH_RATE);
+        
         }
 
     @Override

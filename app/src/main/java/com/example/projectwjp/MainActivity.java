@@ -36,6 +36,12 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
 
     Context context = this;
+
+    public int getDiffLevel() {
+        return diffLevel;
+    }
+
+    private int diffLevel = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
@@ -46,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
 
         fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, StartFragment.class,null).setReorderingAllowed(true).commit();
-
 
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); //Wlonczony ekran poki dziala aplikacja
 
@@ -67,9 +72,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
+    public void upLevel(MenuItem item) {
 
-
+        if(diffLevel<4){
+            diffLevel += 1;
+        }
 
     }
+
+    public void downLevel(MenuItem item) {
+        if(diffLevel>1){
+            diffLevel -= 1;
+        }
+    }
+}
 
 
