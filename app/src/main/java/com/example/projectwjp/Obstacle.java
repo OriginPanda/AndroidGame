@@ -7,6 +7,7 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class Obstacle extends Actor{
@@ -16,6 +17,11 @@ public class Obstacle extends Actor{
     private int obsVelocity; //
     private Random random;
     private Paint numberPaint;
+    private int q = 0;
+    private int diffLevel;
+
+
+
     public int getNumber() {
         return number;
     }
@@ -29,26 +35,29 @@ public class Obstacle extends Actor{
 
     private int number;
     private Impact impact;
-    public Obstacle(Context context,Paint numberPaint) {
-        size = 200; //TODO skalowanie z ekranem
-        body = new Bitmap[2];
-        this.numberPaint = numberPaint;
-        body[0] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle1);// przydzielanie obrazu
-        body[1] = BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle2);
+    public Obstacle(Context context,Paint numberPaint,int q, int diffLevel) {
 
-        body[0] = Bitmap.createScaledBitmap(body[0],size,size,true);
-        body[1] = Bitmap.createScaledBitmap(body[1],size,size,true);
+        size = 200; //TODO skalowanie z ekranem
+
+        this.q=q;
+        this.diffLevel = diffLevel;
+
+        body = new ArrayList<>();
+        this.numberPaint = numberPaint;
+
+        // przydzielanie obrazu
+        body.add(0,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle1),size,size,true));
+        body.add(1,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle2),size,size,true));
         random = new Random();
     }
     public void resetPosition(){
+        //int full = (GameView.dWidth - size);
+        int bound = (GameView.dWidth - size)/(diffLevel+2);
 
-        actX = random.nextInt(GameView.dWidth - size);
+        actX = random.nextInt((q+1)*bound-(q*bound))+(q*bound);
+
         actY = -200 + random.nextInt(600)*-1;
         obsVelocity = baseVelocity+random.nextInt(5);//TODO w zaleznosci od trudnosci
-
-    }
-    public void updatePosition(){
-        //TODO update position?
 
     }
 
@@ -80,10 +89,7 @@ public class Obstacle extends Actor{
         canvas.drawText(String.valueOf(getNumber()),actX+size/2, (float) (actY+size/1.3),numberPaint);
     }
 
-    @Override
-    public void onTick(Canvas canvas) {
 
-    }
 
     public Impact getImpact() {
         return impact;

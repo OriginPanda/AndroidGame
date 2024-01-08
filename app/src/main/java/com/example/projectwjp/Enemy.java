@@ -57,16 +57,13 @@ public class Enemy extends Actor {
 
     }
 
-    @Override
-    public void onTick(Canvas canvas) {
 
-    }
     public void setEquation(){
         random = new Random();
         int bounds = 10;
-        int x = random.nextInt(bounds);
+        int x = random.nextInt(bounds)+1;
 
-        int y = random.nextInt(bounds);
+        int y = random.nextInt(bounds)+1;
 
         switch (type){
             case Dodawanie:
@@ -88,16 +85,16 @@ public class Enemy extends Actor {
                 break;
             case Mnozenie:
                 bounds = 5*diffLevel;
-                x = random.nextInt(bounds);
-                y = random.nextInt(bounds);
+                x = random.nextInt(bounds)+1;
+                y = random.nextInt(bounds)+1;
                 answer = x*y;
 
                 equation = x+" * "+y;
                 break;
             case Dzielenie:
                 bounds = 5*diffLevel;
-                x = random.nextInt(bounds);
-                y = random.nextInt(bounds);
+                x = random.nextInt(bounds)+1;
+                y = random.nextInt(bounds)+1;
                 answer = x/y;
 
                 equation = x+" / "+y;
@@ -110,11 +107,11 @@ public class Enemy extends Actor {
         numbers[0]=answer;
         for(int i = 1;i<diffLevel+2;i++){
 
-            numbers[i]=random.nextInt(bounds);
+            numbers[i]=random.nextInt(bounds)+1;
 
             while(numbers[i]==answer)
             {
-                numbers[i]=random.nextInt(bounds);
+                numbers[i]=random.nextInt(bounds)+1;
             }
         }
     }

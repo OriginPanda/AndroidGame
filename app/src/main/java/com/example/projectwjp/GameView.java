@@ -108,11 +108,12 @@ public class GameView extends View {
 
         //enemy.setEquation();
         for(int i=0; i<enemy.getDiffLevel()+2;i++){
-            Obstacle obs = new Obstacle(context,numberPaint);
-            enemy.obstacles.add(obs);
+            Obstacle obs = new Obstacle(context,numberPaint,i, enemy.getDiffLevel());
             obs.resetPosition();
-
             obs.setNumber(enemy.getNumbers()[i]);
+            enemy.obstacles.add(obs);
+
+
         }
 
     }
