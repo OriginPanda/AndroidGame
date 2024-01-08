@@ -63,9 +63,10 @@ public class Enemy extends Actor {
     }
     public void setEquation(){
         random = new Random();
-        int x = random.nextInt(10*diffLevel);
+        int bounds = 10;
+        int x = random.nextInt(bounds);
 
-        int y = random.nextInt(10*diffLevel);
+        int y = random.nextInt(bounds);
 
         switch (type){
             case Dodawanie:
@@ -76,6 +77,7 @@ public class Enemy extends Actor {
             case Odejmowanie:
                 if(x>y){
                     answer = x-y;
+
                     equation = x+" - "+y;
                 }
                 else{
@@ -85,15 +87,17 @@ public class Enemy extends Actor {
 
                 break;
             case Mnozenie:
-                x = random.nextInt(2*diffLevel);
-                y = random.nextInt(2*diffLevel);
+                bounds = 5*diffLevel;
+                x = random.nextInt(bounds);
+                y = random.nextInt(bounds);
                 answer = x*y;
 
                 equation = x+" * "+y;
                 break;
             case Dzielenie:
-                x = random.nextInt(2*diffLevel);
-                y = random.nextInt(2*diffLevel);
+                bounds = 5*diffLevel;
+                x = random.nextInt(bounds);
+                y = random.nextInt(bounds);
                 answer = x/y;
 
                 equation = x+" / "+y;
@@ -106,11 +110,11 @@ public class Enemy extends Actor {
         numbers[0]=answer;
         for(int i = 1;i<diffLevel+2;i++){
 
-            numbers[i]=random.nextInt(answer+20);
+            numbers[i]=random.nextInt(bounds);
 
             while(numbers[i]==answer)
             {
-                numbers[i]=random.nextInt(answer+20);
+                numbers[i]=random.nextInt(bounds);
             }
         }
     }
