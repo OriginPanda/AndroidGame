@@ -86,7 +86,7 @@ public class GameView extends View {
         numberPaint.setColor(Color.YELLOW);
         numberPaint.setTextSize(NUMBER_SIZE);
         numberPaint.setTextAlign(Paint.Align.CENTER);
-        numberPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
+        numberPaint.setTypeface(ResourcesCompat.getFont(context, R.font.arcade));
 
         hero = new Hero(context);
         random = new Random();
@@ -136,7 +136,7 @@ public class GameView extends View {
 
             obs.draw(canvas);
             enemy.obstacles.get(i).setNumber(enemy.getNumbers()[i]);
-            obs.animation(REFRESH_RATE);
+            obs.animation(REFRESH_RATE,obs.body);
             obs.fall();
 
             // TODO Animacja impactu

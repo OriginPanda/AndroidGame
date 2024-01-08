@@ -36,7 +36,7 @@ public class GameOver extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("my_pref",0);
 
-        int highest = sharedPreferences.getInt("highest",0);
+
 
     }
     public void menu(View view){

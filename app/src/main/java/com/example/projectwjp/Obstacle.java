@@ -20,7 +20,7 @@ public class Obstacle extends Actor{
     private int q = 0;
     private int diffLevel;
 
-
+    ArrayList<Bitmap> testAnim;
 
     public int getNumber() {
         return number;
@@ -37,6 +37,7 @@ public class Obstacle extends Actor{
     private Impact impact;
     public Obstacle(Context context,Paint numberPaint,int q, int diffLevel) {
 
+
         size = 200; //TODO skalowanie z ekranem
 
         this.q=q;
@@ -44,10 +45,17 @@ public class Obstacle extends Actor{
 
         body = new ArrayList<>();
         this.numberPaint = numberPaint;
-
         // przydzielanie obrazu
-        body.add(0,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle1),size,size,true));
-        body.add(1,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle2),size,size,true));
+
+        body.add(0,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.pixilframe0),size,size,true));
+        body.add(1,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.pixilframe1),size,size,true));
+        body.add(2,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.pixilframe2),size,size,true));
+        body.add(3,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.pixilframe3),size,size,true));
+
+        testAnim = new ArrayList<>();
+        testAnim.add(0,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle1),size,size,true));
+        testAnim.add(1,Bitmap.createScaledBitmap(BitmapFactory.decodeResource(context.getResources(), R.drawable.baseobstacle2),size,size,true));
+        currentFrame = body.get(0);
         random = new Random();
     }
     public void resetPosition(){
