@@ -88,7 +88,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
+    /**
+     *
+     * @param item
+     * zmianany za pomocą przyciskow menu poziomu trudnosci
+     * poziom jest zapisywany do kolejnego otworzenia aplikacji
+     */
     public void upLevel(MenuItem item) {
 
         if(diffLevel<3){
@@ -110,6 +115,12 @@ public class MainActivity extends AppCompatActivity {
         fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, StartFragment.class,null).setReorderingAllowed(true).commit();
     }
 
+    /**
+     *
+     * @param item
+     *
+     * otworzenie fragmentu menu
+     */
     public void settings(MenuItem item) {
         FragmentManager fragmentManager = getSupportFragmentManager();
 

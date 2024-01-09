@@ -20,30 +20,24 @@ import android.widget.TextView;
  */
 public class StartFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "levelType";
     private static final String ARG_PARAM2 = "viewPos";
-    int viewPos = 0;
 
 
-    // TODO: Rename and change types of parameters
+
     private Type mlevelType = Type.Dodawanie;
-    private String mParam2;
+    private int viewPos = 0;
 
     public StartFragment() {
         // Required empty public constructor
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
+     * parametry ktore dostarczamy do klasy przy tworzeniu
      * @param levelType Parameter 1.
      * @param viewPos Parameter 2.
-     * @return A new instance of fragment StartFragment.
+     * @return nowa instancja fragmentu.
      */
-    // TODO: Rename and change types and number of parameters
     public static StartFragment newInstance(Type levelType, int viewPos) {
         StartFragment fragment = new StartFragment();
         Bundle args = new Bundle();
@@ -65,6 +59,12 @@ public class StartFragment extends Fragment {
         }
     }
 
+    /**
+     *
+     *Funkcja do utworzenia tresci fragmentu (podokna)
+     *Wpierw dostarczamy schemat xml po czym przypisujemy odniesienia do poszczegolnych elementow
+     *Ustawiamy listenery na guziki
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -111,6 +111,12 @@ public class StartFragment extends Fragment {
 
         return view;
     }
+
+    /**
+     *
+     * @param view
+     * Funkcja do rozpoczecia gry, czyli utworzenia fragmentu z trescia poziomu gry
+     */
     public void StartGame(View view){
 
         //Bundle args = getArguments();
@@ -123,6 +129,11 @@ public class StartFragment extends Fragment {
         fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, GameFragment.class, args,"frag1").setReorderingAllowed(true).addToBackStack(null).commit();
 
     }
+
+    /**
+     * Funkcja zmieniajaca poziomy wykorzystywana na przyciskach
+     * i aktualizuje fragment
+     */
     public void swipeView(View view){
         Bundle args = new Bundle();
         if(viewPos<=-1){
