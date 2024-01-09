@@ -78,15 +78,8 @@ public class GameFragment extends Fragment {
 //        gameView.setLayoutParams(new FrameLayout.LayoutParams(
 //                FrameLayout.LayoutParams.WRAP_CONTENT,
 //                FrameLayout.LayoutParams.WRAP_CONTENT));
-        Button b = (Button)view.findViewById(R.id.button3);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView textView = view.findViewById(R.id.levelType);
-                textView.setText("seima");//TODO PAUZA
-                Test(view);
-            }
-        });
+
+
         GameView gameView = new GameView(getContext(),view,getArguments());
         layout.addView(gameView);
         layout.addView(view);
@@ -97,8 +90,6 @@ public class GameFragment extends Fragment {
         return layout;
                 //new GameView(getContext());//inflater.inflate(R.layout.fragment_game, container, false);
     }
-    public void Test(View view){
 
-    }
 
 }

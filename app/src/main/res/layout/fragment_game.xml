@@ -15,13 +15,13 @@
 
         <TextView
             android:id="@+id/levelType"
-            android:layout_width="393dp"
-            android:layout_height="26dp"
+            android:layout_width="411dp"
+            android:layout_height="28dp"
             android:fontFamily="@font/arcade"
             android:gravity="center"
             android:text="Nazwa"
             android:textAlignment="center"
-            android:textColor="@color/yellow_green"
+            android:textColor="@color/cadet_blue"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/levelEquation"
@@ -32,30 +32,20 @@
 
         <TextView
             android:id="@+id/levelEquation"
-            android:layout_width="390dp"
-            android:layout_height="42dp"
+            android:layout_width="411dp"
+            android:layout_height="58dp"
+            android:layout_marginTop="152dp"
             android:fontFamily="@font/arcade"
+            android:gravity="center"
             android:text="Rownanie"
             android:textAlignment="center"
-            android:textColor="@color/yellow_green"
+            android:textColor="@color/dark_green"
             android:textSize="48sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/levelType" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/button3"
-            android:layout_width="75dp"
-            android:layout_height="57dp"
-            android:text="Pauza"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
 
         <ProgressBar
             android:id="@+id/heroHPBar"
@@ -73,7 +63,7 @@
             app:layout_constraintBottom_toTopOf="@+id/enemyHPBar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textView2"
-            app:layout_constraintTop_toBottomOf="@+id/levelEquation" />
+            app:layout_constraintTop_toBottomOf="@+id/levelType" />
 
         <ProgressBar
             android:id="@+id/enemyHPBar"
@@ -98,6 +88,7 @@
             android:fontFamily="@font/arcade"
             android:text="Enemy HP"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/enemyHPBar"
@@ -111,12 +102,13 @@
             android:fontFamily="@font/arcade"
             android:text="Your HP"
             android:textAlignment="center"
+            android:textColor="#000000"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toStartOf="@+id/heroHPBar"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/levelEquation" />
+            app:layout_constraintTop_toBottomOf="@+id/levelType" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -3,6 +3,7 @@ package com.example.projectwjp;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -24,17 +25,17 @@ import java.util.Random;
 
 public class GameView extends View {
     private Map mapa;
-    private Rect rectBackground, rectGround;
+    private Rect rectBackground, rectGround,rectEnemy;
     private Context context;
     private Handler handler;
     private Enemy enemy;
     private Hero hero;
     private final int REFRESH_RATE = 60;
     private Runnable runnable;
-    private Paint textPaint = new Paint();
+
     private Paint numberPaint = new Paint();
     private float TEXT_SIZE = 200;
-    private float NUMBER_SIZE = 150;
+    private float NUMBER_SIZE = 120;
     protected static int dWidth, dHeight;
     private Random random;
     private float oldX;
@@ -44,7 +45,6 @@ public class GameView extends View {
     TextView levelEquation;
     ProgressBar enemyHPBar;
     ProgressBar heroHPBar;
-    int siema = 0;
     public GameView(Context context, View viewUI, Bundle args) {
 
         super(context);
@@ -58,12 +58,25 @@ public class GameView extends View {
 
 
 
-        enemy = new Enemy(args.getInt("diffLevel",1),Type.valueOf(args.getString("levelType")));
+        enemy = new Enemy(context,args.getInt("diffLevel",1),Type.valueOf(args.getString("levelType")));
 
 
 
         this.context = context;
-        mapa = new Map(BitmapFactory.decodeResource(getResources(), R.drawable.backgroundgame),BitmapFactory.decodeResource(getResources(),R.drawable.ground));
+        Bitmap mapbg;
+        if(enemy.getDiffLevel()==1){
+            mapbg = BitmapFactory.decodeResource(getResources(), R.drawable.background);
+        }
+        else if(enemy.getDiffLevel()==2){
+            mapbg = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundsnow);
+        }
+        else if(enemy.getDiffLevel()==3){
+            mapbg = BitmapFactory.decodeResource(getResources(), R.drawable.backgroundnigh);
+        }
+        else{
+            mapbg = BitmapFactory.decodeResource(getResources(), R.drawable.background);
+        }
+        mapa = new Map(mapbg,BitmapFactory.decodeResource(getResources(),R.drawable.ground));
 
         Display display = ((Activity)getContext()).getWindowManager().getDefaultDisplay();
         Point size = new Point();
@@ -71,19 +84,17 @@ public class GameView extends View {
         dWidth = size.x;
         dHeight = size.y;
 
-        rectBackground = new Rect(0,0,dWidth,dHeight);
+        rectEnemy = new Rect(dWidth/8,dHeight/3,(dHeight/8)+enemy.size,(dHeight/3)+enemy.size);
+
+        rectBackground = new Rect(0,0,dWidth,dHeight-mapa.ground.getHeight());
         rectGround = new Rect(0,dHeight-mapa.ground.getHeight(),dWidth,dHeight);
         handler = new Handler();
 
 
         runnable = this::invalidate;
 
-        textPaint.setColor(Color.BLUE);
-        textPaint.setTextSize(TEXT_SIZE);
-        textPaint.setTextAlign(Paint.Align.LEFT);
-        textPaint.setTypeface(ResourcesCompat.getFont(context, R.font.nova));
 
-        numberPaint.setColor(Color.YELLOW);
+        numberPaint.setColor(context.getResources().getColor(R.color.steel_blue));
         numberPaint.setTextSize(NUMBER_SIZE);
         numberPaint.setTextAlign(Paint.Align.CENTER);
         numberPaint.setTypeface(ResourcesCompat.getFont(context, R.font.arcade));
@@ -125,9 +136,13 @@ public class GameView extends View {
         canvas.drawBitmap(mapa.background, null, rectBackground,null);
         canvas.drawBitmap(mapa.ground, null,rectGround,null);
 
+        canvas.drawBitmap(enemy.getbody(),null,rectEnemy,null);
+
         canvas.drawBitmap(hero.getbody(),hero.actX,hero.actY,null);
         enemyHPBar.setProgress(enemy.getEnemyHP());
         heroHPBar.setProgress(hero.getHeroHP());
+
+        enemy.animation(REFRESH_RATE,enemy.body);
 
         for(int i=0; i<enemy.obstacles.size();i++){
 
@@ -227,9 +242,8 @@ public class GameView extends View {
         public void endGame(boolean won){
 
             Intent intent = new Intent(context, GameOver.class);
-            intent.putExtra("enemyHP",enemy.getEnemyHP());
             intent.putExtra("won",won);
-            intent.putExtra("type",enemy.getClass());// TODO zmiana na max hp
+            intent.putExtra("type",enemy.getType().toString());
 
             context.startActivity(intent);
             ((Activity)context).finish();

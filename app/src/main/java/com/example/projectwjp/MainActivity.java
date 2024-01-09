@@ -4,6 +4,7 @@ import static java.lang.Thread.sleep;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.app.Activity;
 import com.google.android.material.snackbar.Snackbar;
@@ -35,6 +36,11 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+    /**
+     * Glowne okno na ktorym praktycznie wszystko sie dzieje oprocz ekranu konca gry.
+     * Pierwszy raz robilem cokolwiek w androidzie wiec jest troche bajzel
+     * wiele rzeczy na wiele sposobow mozna robic wiec na bierzaco bylo wszystko zmieniane
+     */
     Context context = this;
 
     public int getDiffLevel() {
@@ -42,10 +48,21 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int diffLevel = 1;
+
+    /**
+     *
+     * funkcja tworzaca glowne okno i od razu dodajaca do nie go podoknow (fragment)
+     * zczytuje tez dane z pliku zapisu z telefonu dla tej aplikacji (SharedPreferences)
+     * ustawia layout z pliku xml
+     * i ustawia by ekran byl caly czas wlonczony poki aplikacja dziala
+     *
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
+        SharedPreferences sharedPreferences = getSharedPreferences("my_pref",0);
+        diffLevel = sharedPreferences.getInt("diffLevel",1);
 
         setContentView(R.layout.activity_main);// ustawia layout z pliku xml
 
@@ -74,16 +91,29 @@ public class MainActivity extends AppCompatActivity {
 
     public void upLevel(MenuItem item) {
 
-        if(diffLevel<4){
+        if(diffLevel<3){
             diffLevel += 1;
         }
+        getSharedPreferences("my_pref",0).edit().putInt("diffLevel",diffLevel).apply();
+        FragmentManager fragmentManager = getSupportFragmentManager();
 
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, StartFragment.class,null).setReorderingAllowed(true).commit();
     }
 
     public void downLevel(MenuItem item) {
+
         if(diffLevel>1){
             diffLevel -= 1;
         }
+        getSharedPreferences("my_pref",0).edit().putInt("diffLevel",diffLevel).apply();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, StartFragment.class,null).setReorderingAllowed(true).commit();
+    }
+
+    public void settings(MenuItem item) {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        fragmentManager.beginTransaction().replace(R.id.fragmentContainerView, SettingsFragment.class,null).setReorderingAllowed(true).addToBackStack(null).commit();
     }
 }
 

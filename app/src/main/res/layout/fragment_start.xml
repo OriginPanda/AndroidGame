@@ -10,10 +10,12 @@
         android:id="@+id/mainlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/backgroundgame"
+        android:background="@drawable/background"
         android:fitsSystemWindows="true"
         android:gravity="center"
         android:orientation="vertical">
+
+        <!--android:backgroundTint="@color/forest_green"-->
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/startbutton"
@@ -21,18 +23,19 @@
             android:layout_height="120dp"
             android:layout_marginStart="71dp"
             android:layout_marginEnd="72dp"
-            android:layout_marginBottom="72dp"
-            android:backgroundTint="@color/forest_green"
+            android:layout_marginBottom="100dp"
+
+            android:background="@drawable/startbuttonbg"
             android:fontFamily="@font/arcade"
             android:shadowDx="-10"
             android:shadowDy="20"
             android:shadowRadius="7"
             android:text="Start"
             android:textColor="@color/white"
-            android:textSize="70sp"
+            android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintHorizontal_bias="0.488"
             app:layout_constraintStart_toStartOf="parent"
             tools:context=".StartFragment" />
 
@@ -53,9 +56,10 @@
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragmentType"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.309" />
 
         <androidx.appcompat.widget.AppCompatButton
+
             android:id="@+id/buttonLeft"
             style="@style/Widget.AppCompat.Button"
             android:layout_width="83dp"
@@ -73,7 +77,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/fragmentType"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.309" />
 
         <TextView
             android:id="@+id/fragmentType"
@@ -83,16 +87,16 @@
             android:gravity="center_horizontal|center_vertical"
             android:text="Addition"
             android:textAlignment="center"
-            android:textColor="#EF8635"
+            android:textColor="#006A17"
             android:textColorHighlight="#F80000"
-            android:textSize="60sp"
+            android:textSize="34sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/startbutton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/title"
-            app:layout_constraintVertical_bias="0.172" />
+            app:layout_constraintVertical_bias="0.11" />
 
         <TextView
             android:id="@+id/title"
@@ -103,14 +107,38 @@
             android:gravity="center_horizontal|center_vertical"
             android:text=" Siema \n Matma"
             android:textAlignment="center"
-            android:textColor="#E88132"
+            android:textColor="#5C4304"
             android:textColorHighlight="#F80000"
-            android:textSize="96sp"
+            android:textSize="60sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/completedView"
+            android:layout_width="43dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="176dp"
+            android:layout_marginEnd="40dp"
+            android:src="@drawable/notcompleted"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewDiffLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/arcade"
+            android:gravity="center"
+            android:text="Poziom Trudnosci"
+            android:textColor="#FA4D4D"
+            android:textSize="24sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fragmentType" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

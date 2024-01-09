@@ -10,7 +10,7 @@ public class Impact {
     float impactX,impactY;
 
     public Impact(Context context){
-        body[0] = BitmapFactory.decodeResource(context.getResources(),R.drawable.impact1);
+        body[0] = BitmapFactory.decodeResource(context.getResources(),R.drawable.hero);
         body[0] = Bitmap.createScaledBitmap(body[0],100,100,true); //Jakies scalowanie
 
     }

@@ -13,7 +13,9 @@ public class Hero extends Actor {
     public Hero(Context context) {
         size = 200;
         body = new ArrayList<>();
-        body.add(0,BitmapFactory.decodeResource(context.getResources(), R.drawable.hero));
+
+        body.add(0,BitmapFactory.decodeResource(context.getResources(), context.getSharedPreferences("my_pref",0).getInt("hero",R.drawable.hero1)));
+
         body.add(0,Bitmap.createScaledBitmap(body.get(0),size,size,true)) ;
     }
     public int getHeroHP() {
@@ -32,10 +34,7 @@ public class Hero extends Actor {
         heroHP-=10;
     }
 
-    @Override
-    public void draw(Canvas canvas) {
 
-    }
 
 
 }

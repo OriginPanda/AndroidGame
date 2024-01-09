@@ -13,4 +13,10 @@
         android:onClick="downLevel"
         android:orderInCategory="102"
         android:title="Zmniejsz Poziom Trudnosci" />
+    <item
+        android:onClick="settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Settings" />
+
 </menu>

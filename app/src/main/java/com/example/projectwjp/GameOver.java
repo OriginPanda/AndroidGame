@@ -2,6 +2,8 @@ package com.example.projectwjp;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -21,8 +23,14 @@ public class GameOver extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_over);
 
-        int enemyHP = getIntent().getExtras().getInt("enemyHP",999);
+        //Bitmap background = (Bitmap) getIntent().getExtras().get("background");
+
+        //this.findViewById(R.id.gameover).setBackground(new BitmapDrawable(getResources(), background));
+
         boolean won = getIntent().getExtras().getBoolean("won",false);
+
+        String type = getIntent().getExtras().getString("type");
+
         result = findViewById(R.id.resultText);
 
 
@@ -35,7 +43,9 @@ public class GameOver extends AppCompatActivity {
         }
 
         sharedPreferences = getSharedPreferences("my_pref",0);
-
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putBoolean(type,won);
+        editor.apply();
 
 
     }
@@ -44,10 +54,5 @@ public class GameOver extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
-    public void restart(View view){
-        Intent intent  = new Intent(GameOver.this,MainActivity.class);
-        startActivity(intent);
-        finish();
 
-    }
 }

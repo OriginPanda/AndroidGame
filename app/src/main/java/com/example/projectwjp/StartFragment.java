@@ -1,5 +1,6 @@
 package com.example.projectwjp;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -9,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -72,10 +74,19 @@ public class StartFragment extends Fragment {
         Button bLeft = (Button)view.findViewById(R.id.buttonLeft);
         Button bRight = (Button)view.findViewById(R.id.buttonRight);
         TextView textType = (TextView)view.findViewById(R.id.fragmentType);
+        ImageView imageView = (ImageView) view.findViewById(R.id.completedView);
+        TextView diffView =(TextView)view.findViewById(R.id.textViewDiffLevel);
 
         textType.setText(mlevelType.toString());
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("my_pref",0);
+        if(sharedPreferences.getBoolean(mlevelType.toString(),false)){
+            imageView.setImageResource(R.drawable.completed);
+        }
+        else {
+            imageView.setImageResource(R.drawable.notcompleted);
+        }
 
-
+        diffView.setText("Poziom Trud: "+ String.valueOf(sharedPreferences.getInt("diffLevel",1)));
         //OnClick w XML przycisku nie działa xD?
         bStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -101,8 +112,6 @@ public class StartFragment extends Fragment {
         return view;
     }
     public void StartGame(View view){
-
-
 
         //Bundle args = getArguments();
         Bundle args = new Bundle();
