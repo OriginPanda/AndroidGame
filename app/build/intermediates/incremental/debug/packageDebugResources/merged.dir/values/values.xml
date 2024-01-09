@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="_light_green">#90EE90</color>
+    <color name="alice_blue">#F0F8FF</color>
+    <color name="antique_white">#FAEBD7</color>
+    <color name="aqua">#00FFFF</color>
+    <color name="aquamarine">#7FFFD4</color>
+    <color name="azure">#F0FFFF</color>
+    <color name="beige">#F5F5DC</color>
+    <color name="bisque">#FFE4C4</color>
+    <color name="black">#000000</color>
+    <color name="blanched_almond">#FFEBCD</color>
+    <color name="blue">#0000FF</color>
+    <color name="blue_violet">#8A2BE2</color>
+    <color name="brown">#A52A2A</color>
+    <color name="burlyWood">#DEB887</color>
+    <color name="cadet_blue">#5F9EA0</color>
+    <color name="chartreuse">#7FFF00</color>
+    <color name="chocolate">#D2691E</color>
+    <color name="cold">#FFD700</color>
+    <color name="coral">#FF7F50</color>
+    <color name="cornflower_blue">#6495ED</color>
+    <color name="cornsilk">#FFF8DC</color>
+    <color name="crimson">#DC143C</color>
+    <color name="cyan">#00FFFF</color>
+    <color name="dark_blue">#00008B</color>
+    <color name="dark_cyan">#008B8B</color>
+    <color name="dark_goldenrod">#B8860B</color>
+    <color name="dark_gray">#A9A9A9</color>
+    <color name="dark_green">#006400</color>
+    <color name="dark_khaki">#BDB76B</color>
+    <color name="dark_magenta">#8B008B</color>
+    <color name="dark_olive_green">#556B2F</color>
+    <color name="dark_orange">#FF8C00</color>
+    <color name="dark_orchid">#9932CC</color>
+    <color name="dark_red">#8B0000</color>
+    <color name="dark_salmon">#E9967A</color>
+    <color name="dark_sea_green">#8FBC8F</color>
+    <color name="dark_slate_blue">#483D8B</color>
+    <color name="dark_slate_gray">#2F4F4F</color>
+    <color name="dark_turquoise">#00CED1</color>
+    <color name="dark_violet">#9400D3</color>
+    <color name="deep_pink">#FF1493</color>
+    <color name="deep_sky_blue">#00BFFF</color>
+    <color name="dim_gray">#696969</color>
+    <color name="dodger_blue">#1E90FF</color>
+    <color name="fire_brick">#B22222</color>
+    <color name="floral_white">#FFFAF0</color>
+    <color name="forest_green">#228B22</color>
+    <color name="fuchsia">#FF00FF</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="ghost_white">#F8F8FF</color>
+    <color name="goldenrod">#DAA520</color>
+    <color name="gray">#808080</color>
+    <color name="green">#008000</color>
+    <color name="greenYellow">#ADFF2F</color>
+    <color name="honeydew">#F0FFF0</color>
+    <color name="hot_pink">#FF69B4</color>
+    <color name="indian_red">#CD5C5C</color>
+    <color name="indigo">#4B0082</color>
+    <color name="ivory">#FFFFF0</color>
+    <color name="khaki">#F0E68C</color>
+    <color name="lavender">#E6E6FA</color>
+    <color name="lavender_blush">#FFF0F5</color>
+    <color name="lawn_green">#7CFC00</color>
+    <color name="lemon_chiffon">#FFFACD</color>
+    <color name="light_blue">#ADD8E6</color>
+    <color name="light_coral">#F08080</color>
+    <color name="light_cyan">#E0FFFF</color>
+    <color name="light_goldenrod_yellow">#FAFAD2</color>
+    <color name="light_grey">#D3D3D3</color>
+    <color name="light_pink">#FFB6C1</color>
+    <color name="light_salmon">#FFA07A</color>
+    <color name="light_sea_green">#20B2AA</color>
+    <color name="light_sky_blue">#87CEFA</color>
+    <color name="light_slate_gray">#778899</color>
+    <color name="light_steel_blue">#B0C4DE</color>
+    <color name="light_yellow">#FFFFE0</color>
+    <color name="lime">#00FF00</color>
+    <color name="lime_green">#32CD32</color>
+    <color name="linen">#FAF0E6</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="maroon">#800000</color>
+    <color name="mediumPurple">#9370DB</color>
+    <color name="medium_aquamarine">#66CDAA</color>
+    <color name="medium_blue">#0000CD</color>
+    <color name="medium_orchid">#BA55D3</color>
+    <color name="medium_sea_green">#3CB371</color>
+    <color name="medium_slate_blue">#7B68EE</color>
+    <color name="medium_spring_green">#00FA9A</color>
+    <color name="medium_turquoise">#48D1CC</color>
+    <color name="medium_violet_red">#C71585</color>
+    <color name="midnight_blue">#191970</color>
+    <color name="mint_cream">#F5FFFA</color>
+    <color name="misty_rose">#FFE4E1</color>
+    <color name="moccasin">#FFE4B5</color>
+    <color name="navajo_white">#FFDEAD</color>
+    <color name="navy">#000080</color>
+    <color name="old_lace">#FDF5E6</color>
+    <color name="olive">#808000</color>
+    <color name="olive_drab">#6B8E23</color>
+    <color name="orange">#FFA500</color>
+    <color name="orange_red">#FF4500</color>
+    <color name="orchid">#DA70D6</color>
+    <color name="pale_goldenrod">#EEE8AA</color>
+    <color name="pale_green">#98FB98</color>
+    <color name="pale_turquoise">#AFEEEE</color>
+    <color name="pale_violet_red">#DB7093</color>
+    <color name="papaya_whip">#FFEFD5</color>
+    <color name="peach_puff">#FFDAB9</color>
+    <color name="peru">#CD853F</color>
+    <color name="pink">#FFC0CB</color>
+    <color name="plum">#DDA0DD</color>
+    <color name="powder_blue">#B0E0E6</color>
+    <color name="purple">#800080</color>
+    <color name="red">#FF0000</color>
+    <color name="rosy_brown">#BC8F8F</color>
+    <color name="royal_blue">#4169E1</color>
+    <color name="saddle_brown">#8B4513</color>
+    <color name="salmon">#FA8072</color>
+    <color name="sandy_brown">#F4A460</color>
+    <color name="sea_green">#2E8B57</color>
+    <color name="seashell">#FFF5EE</color>
+    <color name="sienna">#A0522D</color>
+    <color name="silver">#C0C0C0</color>
+    <color name="sky_blue">#87CEEB</color>
+    <color name="slate_blue">#6A5ACD</color>
+    <color name="slate_gray">#708090</color>
+    <color name="snow">#FFFAFA</color>
+    <color name="spring_green">#00FF7F</color>
+    <color name="steel_blue">#4682B4</color>
+    <color name="tan">#D2B48C</color>
+    <color name="teal">#008080</color>
+    <color name="thistle">#D8BFD8</color>
+    <color name="tomato">#FF6347</color>
+    <color name="turquoise">#40E0D0</color>
+    <color name="violet">#EE82EE</color>
+    <color name="wheat">#F5DEB3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="white_smoke">#F5F5F5</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="yellow_green">#9ACD32</color>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="appbar_padding">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <string name="action_settings">Settings</string>
+    <string name="app_name">ProjectWJP</string>
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="large_text">
+        "Material is the metaphor.\n\n"
+
+        "A material metaphor is the unifying theory of a rationalized space and a system of motion."
+        "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
+        "technologically advanced and open to imagination and magic.\n"
+        "Surfaces and edges of the material provide visual cues that are grounded in reality. The "
+        "use of familiar tactile attributes helps users quickly understand affordances. Yet the "
+        "flexibility of the material creates new affordances that supercede those in the physical "
+        "world, without breaking the rules of physics.\n"
+        "The fundamentals of light, surface, and movement are key to conveying how objects move, "
+        "interact, and exist in space and in relation to each other. Realistic lighting shows "
+        "seams, divides space, and indicates moving parts.\n\n"
+
+        "Bold, graphic, intentional.\n\n"
+
+        "The foundational elements of print based design typography, grids, space, scale, color, "
+        "and use of imagery guide visual treatments. These elements do far more than please the "
+        "eye. They create hierarchy, meaning, and focus. Deliberate color choices, edge to edge "
+        "imagery, large scale typography, and intentional white space create a bold and graphic "
+        "interface that immerse the user in the experience.\n"
+        "An emphasis on user actions makes core functionality immediately apparent and provides "
+        "waypoints for the user.\n\n"
+
+        "Motion provides meaning.\n\n"
+
+        "Motion respects and reinforces the user as the prime mover. Primary user actions are "
+        "inflection points that initiate motion, transforming the whole design.\n"
+        "All action takes place in a single environment. Objects are presented to the user without "
+        "breaking the continuity of experience even as they transform and reorganize.\n"
+        "Motion is meaningful and appropriate, serving to focus attention and maintain continuity. "
+        "Feedback is subtle yet clear. Transitions are efﬁcient yet coherent.\n\n"
+
+        "3D world.\n\n"
+
+        "The material environment is a 3D space, which means all objects have x, y, and z "
+        "dimensions. The z-axis is perpendicularly aligned to the plane of the display, with the "
+        "positive z-axis extending towards the viewer. Every sheet of material occupies a single "
+        "position along the z-axis and has a standard 1dp thickness.\n"
+        "On the web, the z-axis is used for layering and not for perspective. The 3D world is "
+        "emulated by manipulating the y-axis.\n\n"
+
+        "Light and shadow.\n\n"
+
+        "Within the material environment, virtual lights illuminate the scene. Key lights create "
+        "directional shadows, while ambient light creates soft shadows from all angles.\n"
+        "Shadows in the material environment are cast by these two light sources. In Android "
+        "development, shadows occur when light sources are blocked by sheets of material at "
+        "various positions along the z-axis. On the web, shadows are depicted by manipulating the "
+        "y-axis only. The following example shows the card with a height of 6dp.\n\n"
+
+        "Resting elevation.\n\n"
+
+        "All material objects, regardless of size, have a resting elevation, or default elevation "
+        "that does not change. If an object changes elevation, it should return to its resting "
+        "elevation as soon as possible.\n\n"
+
+        "Component elevations.\n\n"
+
+        "The resting elevation for a component type is consistent across apps (e.g., FAB elevation "
+        "does not vary from 6dp in one app to 16dp in another app).\n"
+        "Components may have different resting elevations across platforms, depending on the depth "
+        "of the environment (e.g., TV has a greater depth than mobile or desktop).\n\n"
+
+        "Responsive elevation and dynamic elevation offsets.\n\n"
+
+        "Some component types have responsive elevation, meaning they change elevation in response "
+        "to user input (e.g., normal, focused, and pressed) or system events. These elevation "
+        "changes are consistently implemented using dynamic elevation offsets.\n"
+        "Dynamic elevation offsets are the goal elevation that a component moves towards, relative "
+        "to the component’s resting state. They ensure that elevation changes are consistent "
+        "across actions and component types. For example, all components that lift on press have "
+        "the same elevation change relative to their resting elevation.\n"
+        "Once the input event is completed or cancelled, the component will return to its resting "
+        "elevation.\n\n"
+
+        "Avoiding elevation interference.\n\n"
+
+        "Components with responsive elevations may encounter other components as they move between "
+        "their resting elevations and dynamic elevation offsets. Because material cannot pass "
+        "through other material, components avoid interfering with one another any number of ways, "
+        "whether on a per component basis or using the entire app layout.\n"
+        "On a component level, components can move or be removed before they cause interference. "
+        "For example, a floating action button (FAB) can disappear or move off screen before a "
+        "user picks up a card, or it can move if a snackbar appears.\n"
+        "On the layout level, design your app layout to minimize opportunities for interference. "
+        "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
+        "when a user tries to pick up one of cards.\n\n"
+    </string>
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="title_activity_scrolling">ScrollingActivity</string>
+    <style name="Base.Theme.ProjectWJP" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Button.White" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@android:color/white</item>
+    </style>
+    <style name="Theme.AppCompat.Light.NoActionBar.FullScreen" parent="@style/Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+
+    </style>
+    <style name="Theme.ProjectWJP" parent="Base.Theme.ProjectWJP"/>
+    <style name="Theme.ProjectWJP.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="Theme.ProjectWJP.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.ProjectWJP.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+</resources>

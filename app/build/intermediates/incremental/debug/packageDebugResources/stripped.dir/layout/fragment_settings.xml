@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Wybor Postaci"
+            android:textSize="34sp" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/imageButtonHero0"
+                    android:layout_width="189dp"
+                    android:layout_height="match_parent"
+                    android:contentDescription="hero0"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hero" />
+
+
+                <ImageButton
+                    android:id="@+id/imageButtonHero1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="hero1"
+                    android:src="@drawable/hero1"/>
+            </TableRow>
+        </TableLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/buttonResetProgress"
+            android:layout_width="143dp"
+
+            android:layout_height="111dp"
+            android:layout_gravity="center"
+            android:text="Resetuj Postepy" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewDodawanie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dodawanie"
+                    android:textSize="34sp" />
+
+                <ImageView
+                    android:id="@+id/Dodawanie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:tag="Dodawanie"
+                    android:src="@drawable/notcompleted"/>
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewOdejmowanie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Odejmowanie"
+                    android:textSize="34sp" />
+
+                <ImageView
+                    android:id="@+id/Odejmowanie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:tag="Odejmowanie"
+                    android:src="@drawable/notcompleted" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewMnozenie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mnozenie"
+                    android:textSize="34sp" />
+
+                <ImageView
+                    android:id="@+id/Mnozenie"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:tag="Mnozenie"
+                    android:src="@drawable/notcompleted" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textViewDzielenie"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dzielenie"
+                    android:textSize="34sp" />
+
+                <ImageView
+                    android:id="@+id/Dzielenie"
+                    android:layout_width="79dp"
+                    android:layout_height="match_parent"
+                    android:tag="Dzielenie"
+                    android:src="@drawable/notcompleted" />
+
+            </TableRow>
+        </TableLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
