@@ -1,0 +1,30 @@
+[
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\game_view.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\game_view.xml"
+    },
+    {
+        "merged": "com.example.projectwjp.app-mergeDebugResources-43:/layout/fragment_game.xml",
+        "source": "com.example.projectwjp.app-main-46:/layout/fragment_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\fragment_game.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_game.xml"
+    },
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\fragment_settings.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\game_over.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\game_over.xml"
+    },
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\fragment_start.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_start.xml"
+    },
+    {
+        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-mergeDebugResources-43:\\layout\\activity_main.xml",
+        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\activity_main.xml"
+    }
+]

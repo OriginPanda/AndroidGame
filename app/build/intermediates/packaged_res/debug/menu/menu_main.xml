@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.projectwjp.MainActivity">
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/hero"
+        android:onClick="upLevel"
+        android:orderInCategory="101"
+        android:title="Zwieksz Poziom Trudnosci"
+        app:showAsAction="never" />
+    <item
+        android:onClick="downLevel"
+        android:orderInCategory="102"
+        android:title="Zmniejsz Poziom Trudnosci" />
+    <item
+        android:onClick="settings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:title="Settings" />
+
+</menu>
