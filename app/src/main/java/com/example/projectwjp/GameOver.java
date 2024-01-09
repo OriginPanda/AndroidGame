@@ -12,12 +12,19 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * klasa aktywnosci okno konca gry
+ */
 public class GameOver extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
 
     TextView result;
 
+    /**
+     *Kontruktor okna GameOver zajmuje sie zapisaniem wyniku do pliku i wyswietleniu wyniku
+     *SharedPreferences to zapisuje
+     */
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +56,11 @@ public class GameOver extends AppCompatActivity {
 
 
     }
+
+    /**
+     *Powrot do okna glownego
+     * @param view
+     */
     public void menu(View view){
         Intent intent  = new Intent(GameOver.this,MainActivity.class);
         startActivity(intent);

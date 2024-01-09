@@ -12,14 +12,10 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link GameFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Klasa arganizujaca okno gry
  */
 public class GameFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_DIFF = "diffLevel";
     private static final String ARG_TYPE = "levelType";
 
@@ -32,14 +28,10 @@ public class GameFragment extends Fragment {
     }
 
     /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
      *
      * @param diffLevel Parameter 1.
      * @param levelType Parameter 2.
-     * @return A new instance of fragment GameFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static GameFragment newInstance(int diffLevel, Type levelType) {
         GameFragment fragment = new GameFragment();
         Bundle args = new Bundle();
@@ -52,6 +44,9 @@ public class GameFragment extends Fragment {
         return fragment;
     }
 
+    /**
+     *Kolejne tworzenie
+     */
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,6 +59,11 @@ public class GameFragment extends Fragment {
         }
     }
 
+    /**
+     *Funkcja tworzaca widok fragmentu
+     *Widok jest tworzony z dwoch podwidokow "UI" i widoku rysowania gry
+     * Bardzo dlugo glowilem sie jak wszystko ze soba polaczyc bo jest wiele sposobow i kazdy gdzie ma problemy
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

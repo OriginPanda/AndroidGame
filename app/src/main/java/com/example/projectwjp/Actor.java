@@ -6,6 +6,9 @@ import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
+/**
+ * klasa z ktorej dziedzicza przeciwnik,przekody i bohater
+ */
 public abstract class Actor {
     public Actor() {
         body = new ArrayList<>();
@@ -20,7 +23,11 @@ public abstract class Actor {
 
     public float actX, actY;
 
-
+    /**
+     * Funkcja to wyswietlania animacji
+     * @param Hz czestotliwosc z ktora jest odwiezany obraz
+     * @param Frames klatki animacji
+     */
     public void animation(int Hz,ArrayList<Bitmap> Frames){
 
         double x= Hz*animSpeed;
@@ -36,6 +43,11 @@ public abstract class Actor {
         currentFrame = Frames.get(actFrame);
 
     }
+
+    /**
+     *
+     * @return Zwraca bierząca klatke ktora zostala ustwiona przez animacje
+     */
     public Bitmap getbody(){
         if(currentFrame!=null){
             return currentFrame;

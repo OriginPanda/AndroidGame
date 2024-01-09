@@ -1,46 +1,35 @@
 package com.example.projectwjp;
 
-import static java.lang.Thread.sleep;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.app.Activity;
-import com.google.android.material.snackbar.Snackbar;
-import androidx.activity.OnBackPressedCallback;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.util.Log;
-import android.view.MenuInflater;
-import android.view.View;
+
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.WindowCompat;
+
 
 import androidx.fragment.app.FragmentManager;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
 
-import com.example.projectwjp.databinding.ActivityMainBinding;
+
+
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
+
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
+/**
+ * Glowne okno na ktorym praktycznie wszystko sie dzieje oprocz ekranu konca gry.
+ * Pierwszy raz robilem cokolwiek w androidzie wiec jest troche bajzel
+ * wiele rzeczy na wiele sposobow mozna robic wiec na bierzaco bylo wszystko zmieniane
+ */
 
 public class MainActivity extends AppCompatActivity {
 
-    /**
-     * Glowne okno na ktorym praktycznie wszystko sie dzieje oprocz ekranu konca gry.
-     * Pierwszy raz robilem cokolwiek w androidzie wiec jest troche bajzel
-     * wiele rzeczy na wiele sposobow mozna robic wiec na bierzaco bylo wszystko zmieniane
-     */
+
     Context context = this;
 
     public int getDiffLevel() {

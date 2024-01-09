@@ -13,9 +13,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link SettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
+ *Klasa okna ustawien
  */
 public class SettingsFragment extends Fragment {
 
@@ -41,6 +39,10 @@ public class SettingsFragment extends Fragment {
 //     * @return A new instance of fragment SettingsFragment.
 //     */
 
+    /**
+     * utworzenie instancji fragmentu
+     * @return
+     */
     public static SettingsFragment newInstance() {
         SettingsFragment fragment = new SettingsFragment();
         //Bundle args = new Bundle();
@@ -55,6 +57,12 @@ public class SettingsFragment extends Fragment {
 
     }
 
+    /**
+     *funkcja wczytuje dane z pliku zapisu i przygotowuje do wyswietlenia.
+     * przydziela funkcje do przyciskow.
+     *
+     * @return zwraca widok do wyswietlenia w fragmencie
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -95,6 +103,11 @@ public class SettingsFragment extends Fragment {
         return view;
     }
 
+    /**
+     * funkcja wyboru bitmapy bohatera
+     * @param view to widok z ktorego slucha funkcja
+     * @param i to adres id resource'a bitmapy
+     */
     private void sethero(View view, int i) {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("my_pref",0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -102,11 +115,20 @@ public class SettingsFragment extends Fragment {
         editor.apply();
     }
 
+    /**
+     * Funkcja czysci plik zapisu
+     * @param view to widok z ktorego slucha funkcja
+     */
     private void resetProgress(View view) {
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("my_pref",0);
         sharedPreferences.edit().clear().apply();
 
     }
+
+    /**
+     * Funkcja przydziela odpowiedni obrazek na podstwie czy poziom zostal ukonczony czy nie, biorac pod uwage tag kontenera na obraz
+     * @param imageView kontener obrazu
+     */
     private void progChange(ImageView imageView){
        SharedPreferences sharedPreferences= getActivity().getSharedPreferences("my_pref",0);
 

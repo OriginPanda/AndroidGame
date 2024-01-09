@@ -1,238 +1,218 @@
 [
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_fragment_start.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_start.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_background.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/background.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_additionbody2.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\additionbody2.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_backgroundgame.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/backgroundgame.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xhdpi\\ic_launcher.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_baseobstacle2.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/baseobstacle2.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_background1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\background1.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/anim_fadein.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/anim/fadein.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_backgroundnigh.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\backgroundnigh.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_fragment_start.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/fragment_start.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\xml\\backup_rules.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_additionbody4.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/additionbody4.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_pixilframe3.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\pixilframe3.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-mdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_fragment_settings.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_settings.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/font_nova.ttf.flat",
+        "source": "com.example.projectwjp.app-main-46:/font/nova.ttf"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\font_arcade.TTF.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\font\\arcade.TTF"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-anydpi-v26\\ic_launcher.xml"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_impact1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\impact1.png"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\ic_launcher_foreground.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_additionbody0.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/additionbody0.png"
     },
     {
         "merged": "com.example.projectwjp.app-merged_res-44:/drawable_divbody3.png.flat",
         "source": "com.example.projectwjp.app-main-46:/drawable/divbody3.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_game_view.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/game_view.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_fragment_game.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/fragment_game.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\anim_fadein.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\anim\\fadein.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_ground.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/ground.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_baseobstacle1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\baseobstacle1.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_pixilframe2.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/pixilframe2.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_additionbody3.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\additionbody3.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_activity_main.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/xml_backup_rules.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/xml/backup_rules.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_ground.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\ground.png"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\anim_fadeout.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\anim\\fadeout.xml"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\xml\\data_extraction_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_pixilframe2.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\pixilframe2.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
         "merged": "com.example.projectwjp.app-merged_res-44:/drawable_divbody2.png.flat",
         "source": "com.example.projectwjp.app-main-46:/drawable/divbody2.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-hdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_hero1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\hero1.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_backgroundgame.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\backgroundgame.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_additionbody1.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/additionbody1.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_game_view.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\game_view.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_notcompleted.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/notcompleted.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-hdpi\\ic_launcher_round.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/font_arcade.ttf.flat",
+        "source": "com.example.projectwjp.app-main-46:/font/arcade.ttf"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_hero.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\hero.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_pixilframe1.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/pixilframe1.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_completed.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\completed.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_startbuttonbg.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/startbuttonbg.png"
+    },
+    {
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_hero1.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/hero1.png"
+    },
+    {
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/ic_launcher_foreground.xml"
     },
     {
         "merged": "com.example.projectwjp.app-merged_res-44:/drawable_divbody1.png.flat",
         "source": "com.example.projectwjp.app-main-46:/drawable/divbody1.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\activity_main.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_backgroundnigh.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/backgroundnigh.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_pixilframe0.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/pixilframe0.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_game_over.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\game_over.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/menu_menu_main.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/menu/menu_main.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-mdpi\\ic_launcher.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_completed.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/completed.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\layout_fragment_game.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\layout\\fragment_game.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_hero.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/hero.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_background.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\background.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_additionbody2.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/additionbody2.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_startbuttonbg.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\startbuttonbg.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\menu_menu_main.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\menu\\menu_main.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_game_over.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/game_over.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_additionbody0.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\additionbody0.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_backgroundsnow.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/backgroundsnow.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\navigation\\nav_graph.xml"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\font_nova.ttf.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\font\\nova.ttf"
+        "merged": "com.example.projectwjp.app-merged_res-44:/anim_fadeout.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/anim/fadeout.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_pixilframe1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\pixilframe1.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-hdpi/ic_launcher.webp"
     },
     {
         "merged": "com.example.projectwjp.app-merged_res-44:/drawable_divbody0.png.flat",
         "source": "com.example.projectwjp.app-main-46:/drawable/divbody0.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_additionbody1.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\additionbody1.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/layout_fragment_settings.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/layout/fragment_settings.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_backgroundsnow.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\backgroundsnow.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_additionbody3.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/additionbody3.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_background0.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\background0.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.projectwjp.app-merged_res-44:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.example.projectwjp.app-main-46:/mipmap-mdpi/ic_launcher_round.webp"
     },
     {
         "merged": "com.example.projectwjp.app-merged_res-44:/drawable_divbody4.png.flat",
         "source": "com.example.projectwjp.app-main-46:/drawable/divbody4.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_notcompleted.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\notcompleted.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_pixilframe3.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/pixilframe3.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_title.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\title.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/xml_data_extraction_rules.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/xml/data_extraction_rules.xml"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\font_arcade.ttf.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\font\\arcade.ttf"
+        "merged": "com.example.projectwjp.app-merged_res-44:/drawable_baseobstacle1.png.flat",
+        "source": "com.example.projectwjp.app-main-46:/drawable/baseobstacle1.png"
     },
     {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_baseobstacle2.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\baseobstacle2.png"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_additionbody4.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\additionbody4.png"
-    },
-    {
-        "merged": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-merged_res-44:\\drawable_pixilframe0.png.flat",
-        "source": "C:\\Users\\titro\\.gradle\\daemon\\8.2\\com.example.projectwjp.app-main-46:\\drawable\\pixilframe0.png"
+        "merged": "com.example.projectwjp.app-merged_res-44:/navigation_nav_graph.xml.flat",
+        "source": "com.example.projectwjp.app-main-46:/navigation/nav_graph.xml"
     }
 ]

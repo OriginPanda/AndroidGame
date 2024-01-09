@@ -7,6 +7,10 @@ import android.graphics.Canvas;
 
 import java.util.ArrayList;
 
+/**
+ * klasa poruszanej postaci
+ */
+
 public class Hero extends Actor {
 
     private int heroHP=100;
@@ -21,6 +25,12 @@ public class Hero extends Actor {
     public int getHeroHP() {
         return heroHP;
     }
+
+    /**
+     * Funkcja sprawdza czy postac uderzyla w inny aktor w naszym przypadku zawsze obstacle
+     * @param obs aktor z ktorym sprawdza uderzenie
+     * @return zwraca czy uderzyl
+     */
     protected boolean ifHit( Actor obs){
 
         return(obs.actX + obs.body.get(0).getWidth() >= this.actX
@@ -29,6 +39,9 @@ public class Hero extends Actor {
                 && obs.actY +obs.body.get(0).getWidth()  <= this.actY+getbody().getHeight());
     }
 
+    /**
+     * onHit zmiana wartosci zycia przy uderzeniu
+     */
     @Override
     public void onHit() {
         heroHP-=10;

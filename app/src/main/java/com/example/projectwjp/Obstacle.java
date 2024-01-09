@@ -9,6 +9,9 @@ import android.graphics.Paint;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * klasa przeszkody z odpowiedziamy
+ */
 public class Obstacle extends Actor{
 
 
@@ -34,11 +37,17 @@ public class Obstacle extends Actor{
 
     }
 
-
+    /**
+     * Tutaj sa przypisywane Bitmapy do animaacji jak i reszta zmiennych
+     * @param context informacje z aktywnosci
+     * @param numberPaint to styl numerow wyswietlanych na przeszkodach, moglby on sie znajdowac tutaj, lecz zamysl by by wykorzystac do innych rzeczy
+     * @param q to miejsce w tabeli przeszkod by moc podzielic ekran i odpowienio daleko stawiac przeszkody by usprawnic rozgrywke
+     * @param diffLevel poziom trudnosci
+     */
     public Obstacle(Context context,Paint numberPaint,int q, int diffLevel) {
 
         super();
-        size = 200; //TODO skalowanie z ekranem
+        size = 200;
 
         this.q=q;
         this.diffLevel = diffLevel;
@@ -58,6 +67,10 @@ public class Obstacle extends Actor{
         currentFrame = body.get(0);
         random = new Random();
     }
+
+    /**
+     * Funkcja resetowania pozyscji przeszkody
+     */
     public void resetPosition(){
         //int full = (GameView.dWidth - size);
         int bound = (GameView.dWidth)/(diffLevel+2);
@@ -70,14 +83,28 @@ public class Obstacle extends Actor{
     }
 
 
-
+    /**
+     * funkcja zmieniajaca pozycje na podstawie predkosci co onDraw
+     */
     public void fall(){
         actY += obsVelocity;
     }
+
+    /**
+     * sprawdzenie czy uderzono w ziemie
+     * @param dHeight wysokosc urzadzenia
+     * @param gHeight wysokosc ziemi, czyli poziomu gdzie uderza
+     */
     public boolean ifGroundHit(int dHeight,int gHeight){
         return (actY+size>=dHeight-gHeight);
 
     }
+
+    /**
+     * tworzenie obiektu klasy impact lecz i tak nie jest on wyswietlany w trakcie gry
+     * jak i reset pozycji
+     * @param context
+     */
     public void onGroundHit(Context context){
         Impact impact = new Impact(context);
         impact.impactX =actX;
@@ -85,20 +112,31 @@ public class Obstacle extends Actor{
         resetPosition();
 
     }
+
+    /**
+     * funkcja onHit miala pelnic jescze role inicjacji uderzenia lub innych zmian
+     * lecz teraz tylko resetuje pozycje
+     */
     @Override
     public void onHit() {
 
         resetPosition();
     }
 
-
+    /**
+     * Funkcja zajmujaca sie rysowaniem przeszkody
+     * @param canvas
+     */
     public void draw(Canvas canvas) {
+        fall();
         canvas.drawBitmap(getbody(),actX,actY,null);
         canvas.drawText(String.valueOf(getNumber()),actX+size/2, (float)(actY+size/1.3),numberPaint);
     }
 
 
-
+    /**
+     * nie uzywana funkcja impactu
+     */
     public Impact getImpact() {
         return impact;
     }

@@ -1,3 +1,0 @@
-com.example.projectwjp.test
-style WhiteBackgroundDialogTheme
-style WhiteBackgroundTheme

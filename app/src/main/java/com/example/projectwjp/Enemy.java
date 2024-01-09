@@ -11,6 +11,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * klasa przeciwnika, ktora zajmuje sie przygotowaniem zadania i przydzieleniem liczb do przeszkod
+ */
 public class Enemy extends Actor {
     public int getDiffLevel() {
         return diffLevel;
@@ -40,6 +43,12 @@ public class Enemy extends Actor {
 
     protected ArrayList<Obstacle> obstacles;
 
+    /**
+     * Przydzielanie Bitmap i paramametrow
+     * @param context aktywnosc
+     * @param diffLevel poziom trudnosci
+     * @param type typ zadania/rzeciwnika
+     */
     public Enemy(Context context,int diffLevel, Type type) {
         super();
 
@@ -73,14 +82,21 @@ public class Enemy extends Actor {
         //obstacles = new Obstacle[diffLevel];
 
     }
+
+    /**
+     * funkcja onHit zmniejszajaca zycie przeciwnika
+     */
     @Override
     public void onHit() {
         enemyHP-=10;
     }
 
 
-
-
+    /**
+     * Funkcja zajmujaca sie tworzeniem rownania na podstawie typu przeciwnika
+     * Jest w niej bajzel ze wzgledu na proby ustalenia odpowiedniego zbioru liczb dla konkretnych typow rownan
+     * przypisuje losowo odpowiedz do tablicy Integerow a reszte wypelnia losowymi liczbami
+     */
     public void setEquation(){
         random = new Random();
         int bounds = 10*diffLevel;

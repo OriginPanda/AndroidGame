@@ -14,9 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link StartFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Klasa okna wyboru poziomu gry
  */
 public class StartFragment extends Fragment {
 
@@ -116,6 +114,7 @@ public class StartFragment extends Fragment {
      *
      * @param view
      * Funkcja do rozpoczecia gry, czyli utworzenia fragmentu z trescia poziomu gry
+     * argumenty sa przekazywane w obiekcie Bundle o nazwie args
      */
     public void StartGame(View view){
 

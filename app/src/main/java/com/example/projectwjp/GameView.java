@@ -23,6 +23,9 @@ import androidx.core.content.res.ResourcesCompat;
 
 import java.util.Random;
 
+/**
+ * Glowna klasy gry w ktorej najwiecej sie dzieje
+ */
 public class GameView extends View {
     private Map mapa;
     private Rect rectBackground, rectGround,rectEnemy;
@@ -45,6 +48,14 @@ public class GameView extends View {
     TextView levelEquation;
     ProgressBar enemyHPBar;
     ProgressBar heroHPBar;
+
+    /**
+     *
+     * @param context to aktywnosc w ktorej funkcjonuje widok
+     * @param viewUI to drugi rownolegle dzialajacy widok "UI"
+     * @param args to przekazane argumenty z fragmentu
+     * Konstruktor tworzy przeciwnika, bohatera, mape, napisy, progressbary i przeszkody
+     */
     public GameView(Context context, View viewUI, Bundle args) {
 
         super(context);
@@ -129,6 +140,12 @@ public class GameView extends View {
 
     }
 
+    /**
+     * Funkcja ta zajmuje sie rysowania i tym samym odswiezaniem obrazu gry.
+     * Znajduja sie tutaj funkcje do rysowania i logiki gry
+     *
+     * @param canvas to miejsce do rysowania naszej gry
+     */
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
@@ -152,7 +169,6 @@ public class GameView extends View {
             obs.draw(canvas);
             enemy.obstacles.get(i).setNumber(enemy.getNumbers()[i]);
             obs.animation(REFRESH_RATE,obs.body);
-            obs.fall();
 
             // TODO Animacja impactu
 
@@ -206,10 +222,13 @@ public class GameView extends View {
 
         //canvas.drawRect(dWidth-200, 30,dWidth-200+1.8f*enemy.getEnemyHP(),80,mapa.getHealthPaint());// rysowanie HP
         //canvas.drawText( " "+ enemy.getEnemyHP(),20,TEXT_SIZE,textPaint);// TODO zmiana na max hp
-        handler.postDelayed(runnable, 1000/REFRESH_RATE);
+        handler.postDelayed(runnable, 1000/REFRESH_RATE);//opoznienie odswiezania
         
         }
 
+    /**
+     *Funkcja zajmujaca sie ruchem postaci biorac dane z ruchu po ekranie
+     */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         float touchX = event.getX();
@@ -239,7 +258,11 @@ public class GameView extends View {
         return true;
         }
 
-        public void endGame(boolean won){
+    /**
+     * Funkcja konczaca gre tworzac nowa aktywnosc (okno)
+     * @param won okresla czy gra zostala wygrana czy nie
+     */
+    public void endGame(boolean won){
 
             Intent intent = new Intent(context, GameOver.class);
             intent.putExtra("won",won);

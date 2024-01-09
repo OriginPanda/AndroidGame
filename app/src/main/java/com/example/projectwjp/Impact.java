@@ -3,6 +3,9 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+/**
+ * nie użwana stara klasa do tworzenia animacji uderzenia
+ */
 public class Impact {
     public Bitmap body[] = new Bitmap[1];// ilosc obrazow do animacji  TODO zrobienie obrazow do animacji i ilosc
     int impactFrame = 0;
